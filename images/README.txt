@@ -1,76 +1,76 @@
-PRAGMATA 攻略站 - 图片资源说明
+PRAGMATA Guide - Image Resources
 =====================================
 
-由于版权原因，攻略站不直接包含游戏截图。
-你可以从以下官方渠道自行下载截图，放到本目录中：
+Due to copyright restrictions, this guide site does not directly include game screenshots.
+You can download your own screenshots from the official sources below and place them in this directory:
 
-## 图片来源
+## Image Sources
 
-1. Steam 商店页面
+1. Steam Store Page
    https://store.steampowered.com/app/3357650/PRAGMATA/
-   右键截图 → 另存为图片
+   Right-click screenshots → Save image as
 
-2. Capcom 官方媒体页
+2. Capcom Official Media Page
    https://www.capcom-games.com/pragmata/zh-hans/media/
 
-3. 自己截取（推荐！最贴合攻略内容）
-   使用 Steam 截图键 (F12) 或主机截图功能
+3. Your Own Screenshots (Recommended! Best matches the guide content)
+   Use Steam screenshot key (F12) or console capture features
 
-## 图片命名规则
+## File Naming Convention
 
-将你的截图按以下名称放入本目录，页面会自动加载：
+Place your screenshots in this directory with the following names, and the page will load them automatically:
 
-### 游戏概览 & 角色
-  hero-bg.jpg          - 主视觉背景（月球表面 + 地球）
-  diana-portrait.jpg   - 戴安娜角色图
-  hugh-portrait.jpg    - 休角色图
-  idus-portrait.jpg    - IDUS / AI 概念图
-  shelter-hub.jpg      - 庇护所（Shelter）中心
+### Game Overview & Characters
+  hero-bg.jpg          - Main visual background (lunar surface + Earth)
+  diana-portrait.jpg   - Diana character portrait
+  hugh-portrait.jpg    - Hugh character portrait
+  idus-portrait.jpg    - IDUS / AI concept art
+  shelter-hub.jpg      - Shelter hub center
 
-### 关卡截图
-  sector1-solar.jpg    - Sector 1 太阳能发电厂
-  sector2-mass.jpg     - Sector 2 大规模生产阵列（假纽约）
-  sector3-terra.jpg    - Sector 3 泰拉穹顶（温室）
-  sector4-mines.jpg    - Sector 4 卢纳姆矿区
-  sector5-pragmatics.jpg - Sector 5 实验实用主义区
-  sector6-port.jpg     - Sector 6 中央港口
+### Sector Screenshots
+  sector1-solar.jpg    - Sector 1 Solar Power Plant
+  sector2-mass.jpg     - Sector 2 Mass Production Array (Fake NYC)
+  sector3-terra.jpg    - Sector 3 Terra Dome (Greenhouse)
+  sector4-mines.jpg    - Sector 4 Lunum Mines
+  sector5-pragmatics.jpg - Sector 5 Experimental Pragmatics
+  sector6-port.jpg     - Sector 6 Central Port
 
-### Boss 截图
-  boss-sectorguard.jpg   - SectorGuard（太阳能发电厂Boss）
-  boss-creator.jpg       - Creator（巨型机器人）
-  boss-gardenkeeper.jpg  - Garden Keeper（温室大机器人）
-  boss-airraider.jpg     - Air Raider（空袭者）
-  boss-lunadigger.jpg    - LunaDigger（月面挖掘者）
-  boss-sentinel.jpg      - Sentinel（哨兵）
-  boss-eight-idea.jpg    - Eight / Idea（理念体）
-  boss-abiosis.jpg       - Abiosis（终焉体）
+### Boss Screenshots
+  boss-sectorguard.jpg   - SectorGuard (Solar Power Plant Boss)
+  boss-creator.jpg       - Creator (Giant Robot)
+  boss-gardenkeeper.jpg  - Garden Keeper (Greenhouse Giant Robot)
+  boss-airraider.jpg     - Air Raider
+  boss-lunadigger.jpg    - LunaDigger
+  boss-sentinel.jpg      - Sentinel
+  boss-eight-idea.jpg    - Eight / Idea
+  boss-abiosis.jpg       - Abiosis (Final Form)
 
-### 隐藏结局相关
-  hidden-chamber.jpg     - 隐藏密室
-  black-box-mod.jpg      - 黑匣子模组
-  true-ending.jpg        - 真结局画面
+### Hidden Ending Related
+  hidden-chamber.jpg     - Hidden Chamber
+  black-box-mod.jpg      - Black Box Mod
+  true-ending.jpg        - True Ending scene
 
-### 武器 & 系统
-  hacking-system.jpg     - 骇入系统界面
-  weapon-charge-piercer.jpg - 蓄力穿透枪
-  weapon-decoy.jpg       - 诱饵生成器
-  firmware-tree.jpg      - 固件升级界面
+### Weapons & Systems
+  hacking-system.jpg     - Hacking system interface
+  weapon-charge-piercer.jpg - Charge Piercer
+  weapon-decoy.jpg       - Decoy Generator
+  firmware-tree.jpg      - Firmware upgrade interface
 
-### 收集品示意
-  collect-safe-box.jpg   - Safe Box 收集品
-  collect-rem.jpg        - REM（记忆晶片）
+### Collectible References
+  collect-safe-box.jpg   - Safe Box collectible
+  collect-rem.jpg        - REM (Memory Chip)
   collect-figure.jpg     - Mini Cabin Figure
   collect-pure-lunum.jpg - Pure Lunum
 
-## 推荐截图尺寸
+## Recommended Screenshot Dimensions
 
-- 横向截图：1920×1080 或 1280×720
-- 竖向截图（角色）：1080×1920
-- 文件格式：JPG（推荐）或 WebP
-- 单张控制在 500KB 以内以保证加载速度
+- Landscape screenshots: 1920×1080 or 1280×720
+- Portrait screenshots (characters): 1080×1920
+- File format: JPG (recommended) or WebP
+- Keep each file under 500KB for optimal loading speed
 
-## 提示
+## Tips
 
-- 不需要一次性放齐所有图片，页面在缺少图片时会显示风格化占位符
-- 优先放关卡截图和 Boss 截图，这些对攻略参考价值最大
-- 文件名严格区分大小写，请使用全小写 + 连字符
+- You don't need to place all images at once — the page displays a styled placeholder when images are missing
+- Prioritize sector screenshots and boss screenshots — these are the most valuable for walkthrough reference
+- Filenames are case-sensitive — use all lowercase + hyphens
