@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEGO Batman: Legacy of the Dark Knight — Complete Guide & Story Analysis</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8394945879571540"
+     crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #08080d;
+    --bg-card: #101018;
+    --bg-elevated: #181825;
+    --border: #1e1e32;
+    --text: #c0c0cc;
+    --text-dim: #6e6e82;
+    --accent: #f0b828;
+    --accent2: #3b7fba;
+    --red: #e0454a;
+    --green: #4dc987;
+    --purple: #8854c8;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+  body {
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    background-image:
+      radial-gradient(ellipse at 15% 5%, rgba(240, 184, 40, 0.03) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 95%, rgba(59, 127, 186, 0.04) 0%, transparent 55%);
+    background-attachment: fixed;
+  }
+
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    background: rgba(8, 8, 13, 0.9);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px; padding: 0 24px;
+  }
+  .nav-logo {
+    font-size: 17px; font-weight: 800; letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--accent), #fff 60%, var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer; white-space: nowrap;
+  }
+  .nav-links { display: flex; gap: 16px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 13px; transition: color 0.2s; white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  .section { padding: 64px 0; }
+  .section-alt { background: rgba(255,255,255,0.01); }
+  .section-title {
+    font-size: 28px; font-weight: 700; text-align: center;
+    margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .section-subtitle { text-align: center; color: var(--text-dim); font-size: 14px; margin-bottom: 40px; }
+
+  .hero { padding: 80px 0 56px; text-align: center; }
+  .hero-badge {
+    display: inline-block; padding: 4px 14px; border-radius: 20px;
+    background: rgba(240, 184, 40, 0.1); border: 1px solid rgba(240, 184, 40, 0.2);
+    color: var(--accent); font-size: 12px; letter-spacing: 2px; margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 5.5vw, 64px); font-weight: 900;
+    letter-spacing: 4px; margin-bottom: 4px;
+    background: linear-gradient(135deg, var(--accent) 0%, #fff 45%, var(--accent2) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: clamp(20px, 3vw, 34px); font-weight: 700; color: #fff; margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  .hero-tagline { font-size: 17px; color: var(--text-dim); margin-bottom: 32px; max-width: 680px; margin-left: auto; margin-right: auto; }
+  .hero-meta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .hero-meta-item {
+    padding: 10px 20px; border-radius: 8px;
+    background: var(--bg-card); border: 1px solid var(--border); font-size: 14px;
+  }
+  .hero-meta-item strong { color: var(--accent); }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .card:hover { border-color: rgba(240, 184, 40, 0.25); transform: translateY(-2px); }
+  .card-icon { font-size: 32px; margin-bottom: 12px; }
+  .card h3 { font-size: 18px; margin-bottom: 8px; color: #fff; }
+  .card p, .card li { font-size: 14px; color: var(--text-dim); }
+
+  .tag {
+    display: inline-block; padding: 2px 10px; border-radius: 12px;
+    font-size: 11px; font-weight: 500; margin: 2px;
+  }
+  .tag-boss { background: rgba(224, 69, 74, 0.15); color: var(--red); font-weight: 600; }
+  .tag-item { background: rgba(240, 184, 40, 0.12); color: var(--accent); }
+  .tag-story { background: rgba(59, 127, 186, 0.12); color: var(--accent2); }
+
+  .accordion { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .accordion-header {
+    padding: 18px 24px; background: var(--bg-card);
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none; transition: background 0.2s;
+  }
+  .accordion-header:hover { background: var(--bg-elevated); }
+  .accordion-header h3 { font-size: 17px; color: #fff; display: flex; align-items: center; gap: 10px; }
+  .accordion-header .arrow { color: var(--accent); transition: transform 0.3s; font-size: 14px; }
+  .accordion.open .accordion-header .arrow { transform: rotate(90deg); }
+  .accordion-body {
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    background: rgba(0,0,0,0.2);
+  }
+  .accordion.open .accordion-body { max-height: 8000px; }
+  .accordion-content { padding: 20px 24px; }
+
+  .info-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+  .info-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .info-table td:first-child { color: var(--accent); font-weight: 600; width: 140px; white-space: nowrap; }
+
+  .boss-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-left: 3px solid var(--red); border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 24px; margin-bottom: 16px;
+  }
+  .boss-card h4 { font-size: 17px; color: #fff; margin-bottom: 8px; }
+  .boss-card .boss-location { color: var(--accent); font-size: 13px; margin-bottom: 12px; }
+
+  .step-list { counter-reset: step; list-style: none; padding: 0; }
+  .step-list li {
+    counter-increment: step; padding: 8px 0 8px 36px; position: relative;
+    color: var(--text-dim); font-size: 14px; line-height: 1.8;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 8px;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(240, 184, 40, 0.15); color: var(--accent);
+    font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .tip-box {
+    background: rgba(240, 184, 40, 0.06); border: 1px solid rgba(240, 184, 40, 0.2);
+    border-radius: var(--radius); padding: 16px 20px; margin: 16px 0;
+    font-size: 14px;
+  }
+  .tip-box strong { color: var(--accent); }
+  .warn-box {
+    background: rgba(224, 69, 74, 0.06); border: 1px solid rgba(224, 69, 74, 0.2);
+    border-radius: var(--radius); padding: 16px 20px; margin: 16px 0;
+    font-size: 14px;
+  }
+  .warn-box strong { color: var(--red); }
+
+  .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  thead { background: rgba(240, 184, 40, 0.06); }
+  th { padding: 14px 16px; text-align: left; color: var(--accent); font-weight: 600; white-space: nowrap; }
+  td { padding: 12px 16px; border-top: 1px solid var(--border); }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 13px; }
+
+  .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; cursor: pointer; }
+  .faq-q {
+    font-size: 16px; font-weight: 600; color: #fff;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-q::after { content: '▸'; color: var(--accent); transition: transform 0.3s; font-size: 14px; }
+  .faq-item.open .faq-q::after { transform: rotate(90deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; color: var(--text-dim); font-size: 14px; }
+  .faq-item.open .faq-a { max-height: 500px; padding-top: 12px; }
+
+  .guide-img {
+    position: relative; overflow: hidden; border-radius: var(--radius);
+    border: 1px solid var(--border); background: var(--bg-card);
+  }
+  .guide-img img {
+    display: block; width: 100%; height: 100%; object-fit: cover;
+    transition: opacity 0.4s;
+  }
+  .guide-img .img-fallback {
+    display: none; position: absolute; inset: 0;
+    flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(240, 184, 40, 0.04), rgba(59, 127, 186, 0.04));
+    text-align: center; padding: 20px;
+  }
+  .guide-img.img-missing .img-fallback { display: flex; }
+  .guide-img.img-missing img { opacity: 0; position: absolute; }
+  .img-fallback .fb-icon { font-size: 40px; margin-bottom: 8px; opacity: 0.5; }
+  .img-fallback .fb-text { font-size: 12px; color: var(--text-dim); }
+  .img-16x9 { aspect-ratio: 16 / 9; }
+  .img-hero { aspect-ratio: 21 / 9; }
+
+  .character-card {
+    display: flex; gap: 24px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 32px; align-items: flex-start;
+  }
+  .character-avatar {
+    width: 100px; height: 100px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(240, 184, 40, 0.15), rgba(59, 127, 186, 0.15));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px; border: 2px solid rgba(240, 184, 40, 0.2);
+    overflow: hidden;
+  }
+  .character-avatar img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 50%;
+  }
+  .character-info h3 { font-size: 20px; margin-bottom: 4px; color: #fff; }
+  .character-role { color: var(--accent); font-size: 13px; margin-bottom: 10px; }
+  .character-info p { font-size: 14px; color: var(--text-dim); }
+
+  .stud-highlight {
+    font-size: 22px; font-weight: 900; color: var(--accent);
+    font-family: "SF Mono", "Consolas", monospace;
+  }
+
+  /* Story section blockquote style */
+  .story-block {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent2); border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 24px; margin-bottom: 20px;
+  }
+  .story-block h3 { color: var(--accent); font-size: 17px; margin-bottom: 8px; }
+  .story-block p { font-size: 14px; color: var(--text-dim); line-height: 1.85; }
+  .story-theme {
+    display: inline-block; padding: 3px 12px; border-radius: 12px;
+    background: rgba(59, 127, 186, 0.1); color: var(--accent2);
+    font-size: 11px; letter-spacing: 1px; margin-bottom: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .character-card { flex-direction: column; align-items: center; text-align: center; }
+    .hero h1 { font-size: 30px; }
+    .hero-sub { font-size: 18px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .section { padding: 40px 0; }
+    .accordion-header h3 { font-size: 15px; }
+    .info-table td:first-child { width: 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== Navigation ========== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">LEGO BATMAN · GUIDE</div>
+    <ul class="nav-links">
+      <li><a href="#story">Story</a></li>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#missions">Missions</a></li>
+      <li><a href="#characters">Characters</a></li>
+      <li><a href="#bosses">Bosses</a></li>
+      <li><a href="#collectibles">Collectibles</a></li>
+      <li><a href="#studs">Stud Farming</a></li>
+      <li><a href="#beginners">Tips</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== Hero ========== -->
+<section class="hero">
+  <div class="guide-img img-hero img-missing" style="max-width:1100px; margin:0 auto 32px;">
+    <img src="images/hero-bg.png" alt="Gotham City skyline — LEGO Batman"
+         onload="this.parentElement.classList.remove('img-missing')"
+         onerror="this.parentElement.classList.add('img-missing')">
+    <div class="img-fallback">
+      <div class="fb-icon">🦇🌃</div>
+      <div class="fb-text">Place a Gotham City skyline screenshot here<br>Recommended: 1920×820 · Filename: images/hero-bg.png</div>
+    </div>
+  </div>
+  <div class="hero-badge">WB Games · Launches May 29, 2026 (Deluxe Early Access May 26)</div>
+  <h1>LEGO BATMAN</h1>
+  <div class="hero-sub">Legacy of the Dark Knight</div>
+  <p class="hero-tagline">One man's war on crime — from Crime Alley to the cowl, from vengeful loner to the patriarch of the Bat-Family. An 86-year legend, rebuilt brick by brick.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">🎮 <strong>PS5 / Xbox Series / PC / Switch 2</strong></div>
+    <div class="hero-meta-item">⏱️ Main Story <strong>12~15 hrs</strong></div>
+    <div class="hero-meta-item">🏆 100% Completion <strong>~35 hrs</strong></div>
+    <div class="hero-meta-item">👥 <strong>2-Player Local Co-op</strong></div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- STORY & NARRATIVE ANALYSIS — THE MAJOR NEW SECTION -->
+<!-- ================================================================== -->
+<section class="section section-alt" id="story">
+  <div class="container">
+    <h2 class="section-title">Story &amp; Narrative Analysis</h2>
+    <p class="section-subtitle">A deep dive into the complete saga — how TT Games remixed 86 years of Batman history into one original epic</p>
+
+    <div class="story-block">
+      <div class="story-theme">NARRATIVE PHILOSOPHY</div>
+      <h3>"People love Batman. Here are all the reasons why."</h3>
+      <p>LEGO Batman: Legacy of the Dark Knight is not an adaptation of any single comic run or film. It is a <strong>greatest-hits remix</strong> — an original story that pulls iconic moments from Frank Miller's <em>Year One</em>, Christopher Nolan's <em>Dark Knight Trilogy</em>, Tim Burton's gothic duology, Matt Reeves' noir take, the Rocksteady Arkham games, and decades of DC comics, then reassembles them into a cohesive saga spanning Bruce Wayne's entire life. Each of the six chapters functions as its own mini-era — like a self-contained graphic novel arc — tracing a clean emotional through-line: <strong>Trauma → Training → Vengeance → Justice → Family → Legacy</strong>.</p>
+    </div>
+
+    <!-- The Arc -->
+    <h3 style="color:#fff; font-size:20px; margin:36px 0 16px; text-align:center;">The Complete Arc: Trauma to Legacy</h3>
+
+    <div class="story-block">
+      <div class="story-theme">PROLOGUE</div>
+      <h3>The Making of Batman — "Why Do We Fall?"</h3>
+      <p>The game opens with <strong>young Bruce Wayne</strong> preparing to see a <em>Grey Ghost</em> film with his parents — a nod to <em>Batman: The Animated Series</em> lore where the Grey Ghost inspired Bruce's persona. This opening is deliberately warm and innocent, a brief glimpse of what Bruce is about to lose. The infamous Crime Alley mugging follows, handled with surprising restraint for a LEGO game: the gunshot happens off-screen in silhouette, the emotional weight landing through young Bruce's stillness.</p>
+      <p style="margin-top:12px;">A time-jump brings us to a <strong>bitter, directionless young-adult Bruce</strong> confronting Carmine Falcone's men outside the Iceberg Lounge — and getting beaten down badly. This is the <em>Batman Begins</em> influence at its strongest: Bruce's rage is impotent without discipline. He leaves Gotham for the Himalayas, training under <strong>Ra's al Ghul and the League of Shadows</strong> alongside <strong>Talia al Ghul</strong>. The training gauntlet — mountain climbing, stealth, combat drills, gadget mastery (throwing shuriken as proto-Batarangs) — isn't just a tutorial; it's the narrative crucible that forges the Batman.</p>
+      <p style="margin-top:12px;">The prologue climaxes with Bruce discovering Ra's al Ghul's true destructive plans for Gotham and refusing to execute a prisoner — the famous moral line from <em>Batman Begins</em>. He fights Ra's in a two-phase boss battle, escapes the crumbling temple, and returns to Gotham a changed man. The transformation is complete: <strong>the angry boy who left is dead; the disciplined warrior has come home.</strong></p>
+    </div>
+
+    <div class="story-block">
+      <div class="story-theme">CHAPTER 1</div>
+      <h3>The Batman Emerges — "I Shall Become a Bat"</h3>
+      <p>Bruce follows a bat through Wayne Manor's grounds into the caverns below — the <strong>discovery of the Batcave</strong> is played as a moment of revelation, not accident. With Alfred's help, he uncovers the prototype Batmobile (a lovely nod to the mechanical history of the cave) and formally adopts the cowl. The game smartly ties Bruce's <strong>first alliance with Jim Gordon</strong> to the corrupt Detective Flass — a deep-cut reference to <em>Batman: Year One</em> that rewards comic readers.</p>
+      <p style="margin-top:12px;">This chapter establishes the core template: Batman as <strong>detective first, fighter second</strong>. The Tricorner investigation has players piecing together evidence boards to ID the Penguin. The Iceberg Lounge infiltration — modelled visually on Matt Reeves' <em>The Batman</em> — ends with Falcone's takedown. Then comes <strong>Ace Chemicals</strong>, where the Red Hood Gang's heist goes wrong. In a genius fusion of canons, the game merges Ed Brubaker's <em>The Man Who Laughs</em> (Red Hood One falling into chemicals) with Tim Burton's 1989 film (the Joker emerging from the vat, complete with the "pale moonlight" line), and even threads <strong>Jack Napier as the man who killed Bruce's parents</strong> — a Burton invention that the game weaponizes for emotional continuity across later chapters. This is the origin of <strong>the Joker</strong>, and the game treats it with the weight it deserves.</p>
+    </div>
+
+    <div class="story-block">
+      <div class="story-theme">CHAPTER 2</div>
+      <h3>Cat &amp; Bat — "The Rogues' Gallery Opens"</h3>
+      <p>With the Batman established, <strong>Catwoman</strong> enters the narrative as an uneasy ally. Their dynamic mirrors the classic comic tension — attraction, distrust, grudging respect — but filtered through LEGO's slapstick lens. The Mimes attack on a mayoral debate introduces the broader rogue threat, and crucially, <strong>Harvey Dent is injured during this incident</strong> — a Chekhov's gun that pays off in Chapter 3.</p>
+      <p style="margin-top:12px;">The Penguin's Arctic World sequence (complete with self-destructing penguin-bombs) and the Joker's Smilex parade float finale establish the escalating stakes. The Joker is sent to <strong>Arkham Asylum</strong> — but the game makes clear that Arkham is less a prison and more a pressure cooker. The Condiment King cameo during the Joker Cards investigation is pure LEGO absurdity, but it serves a narrative purpose: even the joke villains are responding to Batman's presence. <strong>The city is pushing back.</strong></p>
+    </div>
+
+    <div class="story-block">
+      <div class="story-theme">CHAPTER 3</div>
+      <h3>The Dynamic Duo — "You're Not Alone Anymore"</h3>
+      <p>Harvey Dent's transformation into <strong>Two-Face</strong> pays off the Chapter 2 setup. The trail leads to <strong>Haly's Circus</strong>, where <strong>Dick Grayson</strong> is introduced. In a charming subversion of canon, Dick's parents don't die — he simply messes up a performance, decides to quit the circus, and tags along with Bruce. It's LEGO's way of preserving the emotional core of the Robin origin (a child finding purpose with Batman) while keeping the tone accessible.</p>
+      <p style="margin-top:12px;">This chapter is where <strong>the thematic pivot happens</strong>. Bruce is no longer the lone avenger; he's becoming a mentor. Dick's adoption as Robin marks the first step in Batman's evolution from <strong>instrument of fear</strong> to <strong>builder of family</strong>. The Poison Ivy and Kite Man missions are lighter fare, but they establish the pattern: each new chapter brings a new ally, and the Bat-Family grows.</p>
+    </div>
+
+    <div class="story-block">
+      <div class="story-theme">CHAPTER 4</div>
+      <h3>The Bat Family Grows — "A Network, Not a Man"</h3>
+      <p><strong>Barbara Gordon suits up as Batgirl</strong> in a dedicated origin mission, bringing Hackarang and Drone gadgets to the arsenal. Meanwhile, <strong>Dick Grayson evolves from Robin into Nightwing</strong> — a visual and narrative marker of time passing, of the first sidekick outgrowing the role. Mr. Freeze is presented in full Arnold Schwarzenegger camp mode from <em>Batman &amp; Robin</em>, but the game finds real pathos in his frozen wife storyline between the ice puns.</p>
+      <p style="margin-top:12px;">Firefly's pirate-themed museum heist and the Observatory assault round out a chapter that's fundamentally about <strong>expansion</strong>: of the roster, of the threat level, of Batman's operational reach. The Batcave at this point is fully upgraded — it's no longer just a cave; it's a headquarters.</p>
+    </div>
+
+    <div class="story-block">
+      <div class="story-theme">CHAPTER 5</div>
+      <h3>Arkham Falls — "A Serious House on Serious Earth"</h3>
+      <p>The Joker's influence has thrown Arkham into total chaos. The mission titles — "Seeing is Believing," "A Dog Chasing Cars," "A Serious House..." — directly reference <em>The Dark Knight</em> and Grant Morrison's <em>Arkham Asylum: A Serious House on Serious Earth</em>. This is the game at its most psychologically intense: nightmare scenarios, escaped inmates, the asylum itself as an antagonist.</p>
+      <p style="margin-top:12px;">The Tumbler chase through Gotham streets — a direct riff on Nolan's <em>The Dark Knight</em> — provides high-octane contrast to Arkham's claustrophobic corridors. <strong>Talia al Ghul</strong> reappears here, now a playable ally with Blowdarts and Ninja Dash, signaling that the League of Shadows' return is imminent. Her defection from her father's organization is a major narrative beat: she's chosen Batman's path over Ra's al Ghul's.</p>
+    </div>
+
+    <div class="story-block">
+      <div class="story-theme">CHAPTER 6 — FINALE</div>
+      <h3>The League of Shadows Returns — "Legacy"</h3>
+      <p>The finale opens on a <strong>Gotham under occupation</strong>. Wayne Tower has been rebranded "Bane Tower." Armored cameras patrol the skies. Bane's tumblers roll through the streets. League of Shadows ninjas hunt vigilantes. Drones scan every rooftop. <strong>This is what every prior chapter was building toward</strong>: the chaos created by each villain softened the city for a full-scale takeover.</p>
+      <p style="margin-top:12px;">The entire Bat-Family — Batman, Nightwing, Batgirl, and Talia — must fight through occupied Gotham in a gauntlet that takes them from lower streets to subway tunnels to the tower itself. The mission title "The Dark Knight Returns" explicitly invokes Frank Miller, but the game <strong>subverts expected twists for an original conclusion</strong>. Bane is defeated in a multi-phase battle requiring every family member's unique abilities. Talia al Ghul definitively sides with Batman, unlocked permanently after the finale.</p>
+      <p style="margin-top:12px;"><strong>Thematic closure:</strong> Bruce's journey — traumatized child → angry young man → trained warrior → rookie vigilante → experienced Batman → patriarch of the Bat-Family — concludes with the "greying" Dark Knight having built something that will outlast him. The title promised a <strong>"Legacy of the Dark Knight,"</strong> and the game delivers: Batman is no longer just a man. He's an idea, a network, a family. <strong>The legacy is the people he's inspired.</strong></p>
+    </div>
+
+    <!-- Thematic Deep-Dive -->
+    <h3 style="color:#fff; font-size:20px; margin:36px 0 16px; text-align:center;">Thematic Deep-Dive</h3>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">😨</div>
+        <h3>Fear as a Tool, Not a Weakness</h3>
+        <p>Young Bruce falls into the cave and is terrified of bats. The game frames this not as trauma to overcome, but as a symbol to weaponize. "I shall become a bat" is the turning point — fear is transmuted into a controlled instrument. The Bat-Signal, the cape silhouette, the theatricality: all are <strong>applied psychology</strong>. The game's combat system reinforces this — the Focus meter (built through precise, controlled aggression) is literally fear converted into power.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <h3>Justice vs. Vengeance</h3>
+        <p>The League of Shadows training sequence explicitly frames this dichotomy: Ra's al Ghul demands Bruce execute a prisoner to prove his commitment. Bruce refuses. It's the moral line from <em>Batman Begins</em>, but the game earns it by showing us Bruce's rage in the Falcone confrontation — we've <em>seen</em> what vengeance looks like, so we understand what justice costs him. The "no kill" rule isn't a gimmick here; it's the <strong>central philosophical tension</strong> that separates Batman from every villain he faces.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👦</div>
+        <h3>Found Family</h3>
+        <p>The game's clearest emotional arc. Bruce starts utterly alone — orphaned, then self-exiled. Each chapter introduces a new family member: Gordon (the ally), Catwoman (the equal), Robin (the ward), Batgirl (the protégé), Nightwing (the grown ward), Talia (the redeemed enemy). By the final chapter, Batman's victory is <strong>only possible because he's no longer fighting alone</strong>. The lone dark knight couldn't save Gotham. The Bat-Family can.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h3>Institutions as Both Cage and Catalyst</h3>
+        <p>Arkham Asylum is the game's most complex symbol: it's where villains are sent, but it's also where they <strong>become more dangerous</strong>. The GCPD is corrupt (Flass) but redeemable (Gordon). The League of Shadows is both Bruce's training ground and his ultimate enemy. The game consistently argues that <strong>institutions are only as good as the people inside them</strong> — a surprisingly mature thesis for a LEGO title.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎭</div>
+        <h3>The Mask and the Man</h3>
+        <p>Who is the real identity — Bruce Wayne or Batman? The game's structure provides its own answer: <strong>neither and both</strong>. Bruce Wayne without Batman is the helpless, rage-filled young man outside the Iceberg Lounge. Batman without Bruce Wayne is Ra's al Ghul — cold, effective, and terrifying. The synthesis — billionaire by day, vigilante by night — is the only functional identity. The Batcave, physically located <em>beneath</em> Wayne Manor, is the perfect spatial metaphor.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧱</div>
+        <h3>86 Years of Canon as Lego Bricks</h3>
+        <p>The game's narrative method mirrors its medium. Just as LEGO bricks can be disassembled and recombined into new forms, the story takes iconic moments — the Ace Chemicals vat, the Iceberg Lounge vault, the Tumbler chase, the Arkham riot — and <strong>snaps them together into something new</strong>. Burton's Joker origin sits alongside Nolan's League of Shadows alongside Reeves' noir Gotham alongside the comics' Red Hood One. The result shouldn't work, but it does — because the game understands that Batman's mythos has always been modular. Every generation rebuilds the Dark Knight from the same core bricks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Game Overview ========== -->
+<section class="section" id="overview">
+  <div class="container">
+    <h2 class="section-title">Game Overview</h2>
+    <p class="section-subtitle">Everything you need to know before you put on the cowl</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">⚔️</div>
+        <h3>Arkham-Inspired Combat</h3>
+        <p>For the first time in a LEGO game, TT Games has built a <strong>free-flow combat system</strong> modelled on Rocksteady's Arkham series. Attack chains, counters, Focus Takedowns, and gadget combos replace the old button-mashing. The Focus meter — filled by precise attacks and counters — enables <strong>instant takedowns</strong> on shielded, electrified, or heavy enemies. Two difficulty levels: "Caped Crusader" (standard) and <strong>"Dark Knight"</strong> — where enemies drop the turn-taking AI and attack simultaneously with ~30% faster wind-ups.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🥷</div>
+        <h3>Predator Stealth</h3>
+        <p>New stealth mechanics let you grapple to vantage points, perch on gargoyle-like structures, and perform <strong>silent takedowns</strong> with a satisfying minifig-shattering thud. Detective Mode is a pulse-based AoE scan (rather than toggleable X-ray vision) that highlights interactable objects, hidden paths, and enemy patrol routes. Smoke pellets, remote Batarangs, and suit-switching add tactical depth.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏙️</div>
+        <h3>Open-World Gotham City</h3>
+        <p>For the first time in a LEGO Batman game, Gotham is a <strong>fully open world</strong> spanning four islands with random crimes, Riddler puzzles, and hundreds of collectibles. Glide between skyscrapers, grapple up fire escapes, or summon one of <strong>20+ vehicles</strong> (multiple Batmobiles, Batcycles, Batwings) on demand. Fast-travel via the <strong>Subwayne</strong> tunnel system.</p>
+      </div>
+    </div>
+
+    <div class="card-grid" style="margin-top:20px;">
+      <div class="card">
+        <div class="card-icon">🦇</div>
+        <h3>100+ Batsuits &amp; Cosmetics</h3>
+        <p>From the classic grey-and-blue to <em>The Dark Knight Returns</em> armor, from <em>Batman Beyond</em> to <em>Arkham Knight</em> — every era of Batman design is represented. Each suit has a distinct ability: <strong>Power Suit</strong> (hyper-armor + explosive gel), <strong>Sensor Suit</strong> (invisibility + extended dodge i-frames), <strong>Glide Suit</strong> (extended airtime + aerial combat bonuses), <strong>Hazard Suit</strong> (toxic/chemical immunity). Suit-swapping mid-combat is essential.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h3>7 Playable Heroes</h3>
+        <p>Batman, Robin (Tim Drake), Nightwing (Dick Grayson), Batgirl (Barbara Gordon), Catwoman (Selina Kyle), Jim Gordon, and Talia al Ghul. Unusually focused for a LEGO game — but depth over breadth: each has a full skill tree, unique gadgets, and suit variants. Villains become playable in Free Play mode after story completion.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💿</div>
+        <h3>Editions &amp; Pricing</h3>
+        <p><strong>Standard Edition</strong> ($69.99 / £59.99) — Full campaign + pre-order bonus (<em>The Dark Knight Returns</em> Batsuit).<br><strong>Deluxe Edition</strong> ($89.99 / £79.99) — All Standard content + Legacy Collection (Arkham Trilogy Pack, Batman Beyond Pack, Party Music Pack) + <strong>Mayhem Collection</strong> (Sept 2026: playable Joker &amp; Harley Quinn with a new story mission) + Golden Age Batsuit pre-order bonus. Deluxe includes <strong>72-hour early access</strong> (play from May 26).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Mission Guide ========== -->
+<section class="section section-alt" id="missions">
+  <div class="container">
+    <h2 class="section-title">Complete Mission Guide</h2>
+    <p class="section-subtitle">Prologue + 6 Chapters · 22 story missions · Click headers to expand</p>
+
+    <!-- Prologue -->
+    <div class="accordion" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span style="color:var(--accent2);">Prologue</span> Batman: Year One <span class="tag tag-story">4 Missions</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>Missions</td><td>Wayne Manor Grounds (tutorial) → Falcone Confrontation (combat tutorial) → The League of Shadows (training) → Infiltration (Ra's al Ghul boss fight)</td></tr>
+            <tr><td>Collectibles</td><td>Infiltration: <strong>1 Red Brick (Ninja)</strong> + <strong>5 Bonsai Trees</strong></td></tr>
+            <tr><td>New Abilities</td><td>Grapple, Batarang, Stealth Takedown, Focus Takedown</td></tr>
+            <tr><td>Est. Time</td><td>~1.5–2 hrs</td></tr>
+          </table>
+          <h4 style="color:#fff; margin:20px 0 10px;">Story Notes &amp; Key Beats</h4>
+          <ol class="step-list">
+            <li><strong>Wayne Manor Grounds:</strong> Pure tutorial, but rich with environmental storytelling — young Bruce collects pieces of a homemade costume (cape, goggles, hat), foreshadowing the theatricality to come. The <em>Grey Ghost</em> poster on Bruce's wall is an <em>Animated Series</em> deep cut.</li>
+            <li><strong>Falcone Confrontation:</strong> Bruce gets beaten down — hard. This is the <em>Batman Begins</em> beat: rage without discipline is useless. The combat tutorial is diegetic — Bruce is literally learning that he needs training.</li>
+            <li><strong>The League of Shadows:</strong> Mountain climb with Talia, combat drills, stealth gauntlet, gadget training (shuriken → proto-Batarangs), glacier fight. Bruce meets Ra's al Ghul and absorbs the League's discipline while rejecting their extremism.</li>
+            <li><strong>Infiltration:</strong> Bruce discovers Ra's al Ghul's true plans for Gotham, refuses to execute a prisoner (the defining moral moment), and fights Ra's in a two-phase boss battle as the temple crumbles. He escapes and returns to Gotham — <strong>the Batman is born</strong>.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 1 -->
+    <div class="accordion" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span style="color:var(--accent);">Chapter 1</span> The Batman Emerges <span class="tag tag-boss">Boss: Carmine Falcone</span> <span class="tag tag-story">New Ally: Jim Gordon</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>Missions</td><td>New Beginnings → Tricorner Investigation (Penguin) → Riddler → Carmine Falcone (Iceberg Lounge) → Wayne Industries (5 sub-missions: The Subwayne, Spelunking, A Family Friend, WayneTech R&amp;D, Glider Calibration) → The Red Hood Gang (Ace Chemicals)</td></tr>
+            <tr><td>Collectibles</td><td>New Beginnings: Red Brick (Nautical) + 5 Surfboards; Carmine Falcone: Red Brick (Filthy Rich) + 5 Disco Balls + 5 WayneTech Caches; Red Hood Gang: Red Brick (Toxic Waste) + 5 Ace Cards + 5 WayneTech Caches</td></tr>
+            <tr><td>Key Detail</td><td style="color:var(--accent);">Iceberg Lounge vault code: <strong>596</strong> (combine torn clues: "59x" behind Selina's bar + "x96" behind the green couch)</td></tr>
+            <tr><td>Story Arc</td><td>Bruce discovers the Batcave, builds the first Batmobile, allies with Gordon, brings down Falcone's operation, and accidentally creates the Joker at Ace Chemicals when Red Hood One falls into the chemical vat. <strong>Jack Napier is tied to the Wayne murders</strong> — a Burton-influenced thread that runs through the entire game.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 2 -->
+    <div class="accordion" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span style="color:var(--accent);">Chapter 2</span> Cat &amp; Bat <span class="tag tag-boss">Boss: Joker</span> <span class="tag tag-story">New Ally: Catwoman</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>Missions</td><td>Mimes (Shreck's Department Store) → The Penguin (Arctic World) → Flugelheim → Joker (Parade)</td></tr>
+            <tr><td>Collectibles</td><td>Mimes: Red Brick (Feline) + 5 Cat Heads + 5 WayneTech Caches; Penguin: Red Brick (Gothic) + 5 Rubber Ducks + 5 WayneTech Caches; Flugelheim: Red Brick + 5 Boomboxes; Joker: Red Brick + 5 Cakes + 5 WayneTech Caches</td></tr>
+            <tr><td>Story Arc</td><td>Catwoman enters as a chaotic-neutral force — initially stealing Gordon's Batclaw, but ultimately becoming an ally. Harvey Dent is injured during the Mimes attack (setting up Two-Face). The Joker's parade plot — Smilex gas on the crowds — is the chapter's climax. He's sent to Arkham, but <strong>Arkham is where villains fester, not where they're cured</strong>.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 3 -->
+    <div class="accordion" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span style="color:var(--accent);">Chapter 3</span> The Dynamic Duo <span class="tag tag-boss">Bosses: Two-Face / Kite Man / Poison Ivy</span> <span class="tag tag-story">New Ally: Robin</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>Missions</td><td>Two-Face (Haly's Circus) → Kite Man (Power Plant) → Poison Ivy (Botanical Gardens)</td></tr>
+            <tr><td>Collectibles</td><td>Two-Face: Red Brick + 5 Coins; Kite Man: Red Brick + 5 Kites; Poison Ivy: Red Brick + 5 Venus Fly Traps + 5 WayneTech Caches</td></tr>
+            <tr><td>Story Arc</td><td>Harvey Dent's transformation into Two-Face pays off the Chapter 2 setup. Dick Grayson is introduced at Haly's Circus — in a kid-friendly twist, his parents don't die; he simply messes up a performance and decides to join Bruce. <strong>This is the pivot point</strong>: Bruce stops being a lone avenger and becomes a mentor. Poison Ivy's plant-based enemies are weak to fire weapons.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 4 -->
+    <div class="accordion" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span style="color:var(--accent);">Chapter 4</span> The Bat Family Grows <span class="tag tag-boss">Bosses: Firefly / Mr. Freeze</span> <span class="tag tag-story">New Allies: Batgirl &amp; Nightwing</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>Missions</td><td>Firefly (Museum) → Batgirl Begins → Mr. Freeze (Observatory) → Nightwing transition</td></tr>
+            <tr><td>Collectibles</td><td>Firefly: Red Brick + 5 Spaceships + 5 WayneTech Caches; Mr. Freeze: Red Brick + 5 Snow Globes</td></tr>
+            <tr><td>Story Arc</td><td>Barbara Gordon's Batgirl origin mission runs parallel to the main plot — she wasn't recruited; she <strong>chose</strong> to suit up. Dick Grayson evolves from Robin into Nightwing, marking the passage of time and the growth of the first protégé. Mr. Freeze is campy Arnold territory, but his frozen wife storyline provides genuine pathos between the ice puns.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 5 -->
+    <div class="accordion" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span style="color:var(--accent);">Chapter 5</span> Arkham Falls <span class="tag tag-boss">Boss: Bane (Round 1)</span> <span class="tag tag-story">New Ally: Talia al Ghul</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>Missions</td><td>Tumbler Chase → Arkham Asylum (Seeing is Believing / A Dog Chasing Cars / A Serious House...)</td></tr>
+            <tr><td>Key Detail</td><td style="color:var(--red);">Bane is a three-phase puzzle boss — standard melee does NOT work. You must destroy the Venom tubes on his back. See Boss Strategies below.</td></tr>
+            <tr><td>Story Arc</td><td>The Joker's influence has thrown Arkham into complete chaos — the mission titles directly reference <em>The Dark Knight</em> and Grant Morrison's <em>Arkham Asylum</em>. The Tumbler chase through Gotham streets is a direct Nolan riff. Talia al Ghul reappears as a playable ally — <strong>she's chosen Batman's path over her father's</strong>, signaling that the League of Shadows' return is imminent.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 6 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span style="color:var(--accent);">Chapter 6</span> The League of Shadows Returns <span class="tag tag-boss">Final Boss: Bane</span> <span class="tag tag-story">Full Bat-Family</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>Missions</td><td>A Shadow Over Gotham → Bane: Round 2 → The Dark Knight Returns</td></tr>
+            <tr><td>Collectibles</td><td>Red Brick + 5 League Banners + 5 WayneTech Caches</td></tr>
+            <tr><td>Post-Game Unlocks</td><td style="color:var(--accent);">Free Play mode, Batcomputer mission replay, full character unlock, Bat-Mite's full shop inventory, Dark Knight difficulty, all Batcave challenges</td></tr>
+            <tr><td>Story Arc</td><td>Gotham under occupation — Wayne Tower rebranded "Bane Tower," armored cameras and tumblers patrol the streets. The full Bat-Family (Batman, Nightwing, Batgirl, Talia) fights through occupied streets, subway tunnels, and finally Bane Tower itself. The game ends on an <strong>original conclusion</strong> that subverts expected twists. Talia permanently sides with Batman. <strong>The legacy is complete: Batman is no longer a man, but an idea, a family, a network that will outlast him.</strong></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Characters ========== -->
+<section class="section" id="characters">
+  <div class="container">
+    <h2 class="section-title">Playable Characters</h2>
+    <p class="section-subtitle">7 heroes — each with unique gadgets, skill trees, and narrative arcs</p>
+
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div class="character-card">
+        <div class="character-avatar"><img src="images/character-batman.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='🦇'"></div>
+        <div class="character-info">
+          <h3>Batman / Bruce Wayne</h3>
+          <div class="character-role">All-Rounder · The Core of Every Strategy</div>
+          <p>Batarang, Grapnel Gun, Explosive Gel, Glide Cape, Smoke Pellets. The <strong>Batsuit-switching system</strong> is his defining mechanic — Power Suit for hyper-armor and gel puzzles, Sensor Suit for invisibility and extended dodge i-frames, Glide Suit for aerial dominance over ground-based AoE. Prioritize Focus-generation skills first; his entire combat economy runs on the Focus meter. <strong>Narrative note:</strong> Bruce's journey from rage-driven avenger to disciplined patriarch is the game's spine — every suit unlock is a story beat.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-avatar"><img src="images/character-robin.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='🐦'"></div>
+        <div class="character-info">
+          <h3>Robin / Tim Drake</h3>
+          <div class="character-role">Hazard Specialist · Vent Crawler</div>
+          <p>Hazard Suit grants <strong>immunity to toxic sludge and chemical zones</strong> — mandatory for the Bane Phase 2 boss fight. Can crawl through small vents and tight spaces unreachable by other characters, making him the go-to for WayneTech Cache hunting. Fast, agile combo chains; his staff provides slightly better crowd control than Batman's fists.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-avatar"><img src="images/character-nightwing.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='🌙'"></div>
+        <div class="character-info">
+          <h3>Nightwing / Dick Grayson</h3>
+          <div class="character-role">Speed Demon · Combo Specialist</div>
+          <p>Dual Escrima Sticks provide the <strong>fastest attack speed</strong> in the game and the quickest Focus generation of any character. Unique aerial combo chains. Electrorang and Electric Cable Launcher gadgets. Ideal for challenge board tasks ("Combo Crusader" — reach an 80-hit combo) and rapid crowd clearing. His evolution from Robin is a visual marker of time passing in the narrative.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-avatar"><img src="images/character-batgirl.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='🦸'"></div>
+        <div class="character-info">
+          <h3>Batgirl / Barbara Gordon</h3>
+          <div class="character-role">Tech Specialist · Hacker</div>
+          <p>Hackarang and Drone gadgets can <strong>remotely control turrets, security systems, and enemy hardware</strong>. Has a dedicated origin mission in Chapter 4 — she wasn't recruited; she chose to suit up independently. Dual-tech sequences with Batman can crack high-level encryption locks faster than any other pair. Essential for Chapter 6's occupied-Gotham gauntlet where armored cameras must be disabled.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-avatar"><img src="images/character-catwoman.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='🐱'"></div>
+        <div class="character-info">
+          <h3>Catwoman / Selina Kyle</h3>
+          <div class="character-role">Infiltrator · Vertical Mobility</div>
+          <p>Whip can <strong>grapple distant objects and enemies</strong> from range. "Call Kitty" ability marks hidden collectible locations on the minimap. Can climb specific wall types that no other character can scale — many WayneTech Caches are gated behind her wall-crawl. Introduced as a chaotic-neutral thief in Chapter 2; her arc from self-interested rogue to reluctant ally is one of the game's more nuanced character threads.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-avatar"><img src="images/character-Jim-Gordon.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='👮'"></div>
+        <div class="character-info">
+          <h3>Jim Gordon</h3>
+          <div class="character-role">Tactical Support · Ranged Control</div>
+          <p>Gum Gun can <strong>seal pipes, clog machinery, and jam mechanisms</strong> — required for the Toxic Waste Red Brick in Ace Chemicals (shoot the vent pipe 3 times). Signal Flare summons GCPD backup for crowd control. Badge unlocks restricted police areas. With the <strong>Splitter mod</strong> (Workbench upgrade), his rebounding bullets auto-track destructible objects — one of the best early-game stud farming tools.</p>
+        </div>
+      </div>
+      <div class="character-card">
+        <div class="character-avatar">🗡️</div>
+        <div class="character-info">
+          <h3>Talia al Ghul</h3>
+          <div class="character-role">Late-Game · Ninja Mobility</div>
+          <p>Blowdarts and Ninja Dash — a vanish-step dodge similar to Ra's al Ghul's pattern. Can traverse toxic zones freely without a Hazard Suit. Unlocked after Chapter 6; essential for Free Play backtracking through League of Shadows-heavy areas. <strong>Narrative significance:</strong> her permanent defection to Batman's side is the capstone of the "legacy" theme — even Ra's al Ghul's own daughter chose the cowl over the sword.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Boss Strategies ========== -->
+<section class="section section-alt" id="bosses">
+  <div class="container">
+    <h2 class="section-title">Boss Strategies</h2>
+    <p class="section-subtitle">Weak points, phase mechanics, and recommended loadouts for every major boss</p>
+
+    <div class="boss-card">
+      <h4>Ra's al Ghul — Prologue: Infiltration</h4>
+      <div class="boss-location">League of Shadows · Himalayan Temple</div>
+      <table class="info-table">
+        <tr><td>Phases</td><td><strong>2 phases</strong> (Temple duel → Temple escape brawl)</td></tr>
+        <tr><td>Recommended</td><td>Maxed Batarangs, Focus Boost, Perfect Counter</td></tr>
+        <tr><td>Phase 1</td><td>Ra's vanishes in smoke and reappears with shuriken throws or spinning blade charges. Unlike regular ninjas, <strong>Ra's can re-orient his spin mid-charge</strong> — dodge roll <em>multiple times</em>, not just once. Best opening: dodge his shuriken toss and immediately fire three Batarangs — this nearly always stuns him for a beatdown combo.</td></tr>
+        <tr><td>Phase 2</td><td>The temple collapses. Ra's returns with <strong>eight ninjas</strong> (sword + shuriken types) while rocks fall from the ceiling. <strong>Don't waste time clearing adds</strong> — he keeps summoning more. Use ninja grunts to build combo and Focus, then Focus Takedown Ra's. Watch for his <strong>5-shuriken fan attack</strong> — roll, don't run.</td></tr>
+      </table>
+    </div>
+
+    <div class="boss-card">
+      <h4>Bane — Arkham Asylum (Chapter 5) &amp; Bane Tower (Chapter 6)</h4>
+      <div class="boss-location">Underground Chemical Workshop / Wayne (Bane) Tower</div>
+      <table class="info-table">
+        <tr><td>Core Mechanic</td><td style="color:var(--red);"><strong>Standard melee deals ZERO damage.</strong> You must destroy the Venom tubes on his back — this is a puzzle fight, not a DPS race.</td></tr>
+        <tr><td>Recommended</td><td>Batman Power Suit, Robin Hazard Suit, Explosive Gel</td></tr>
+        <tr><td>Phase 1 (100%–66%)</td><td>Stand in front of one of the <strong>three electrified generators</strong> around the perimeter. Watch for his chest-beat animation — this signals a Venom Charge. <strong>Don't dodge too early</strong> — wait for the red targeting reticle to flash <strong>twice</strong>, then combat-roll sideways. Bane hits the generator and is stunned ~4.5s. Immediately Batarang-target and sever the <strong>glowing green valve</strong> on his back.</td></tr>
+        <tr><td>Phase 2 (66%–33%)</td><td>Bane floods the outer ring with <strong>toxic green sludge</strong> (0.5 hearts/sec). Switch to <strong>Robin's Hazard Suit</strong> (immune). Smash 4 green chemical barrels, build the <strong>Sludge Cannon</strong> from the hopping bricks. Wait for Bane's Debris Throw animation, then fire the cannon into his face. Batman grapples in and rips out the second tube.</td></tr>
+        <tr><td>Phase 3 (33%–0%)</td><td>Bane spams a <strong>triple shockwave ground slam</strong> from the center of the room. <strong>Double-jump the exact moment the green ripple touches your character's shadow</strong> — this grants 8 i-frames. Switch to <strong>Batman's Power Suit</strong>, plant Explosive Gel on the glowing silver floor panels, bait Bane onto them, and detonate to launch him into the final QTE sequence.</td></tr>
+      </table>
+    </div>
+
+    <div class="boss-card">
+      <h4>Joker — Gotham Parade (Chapter 2)</h4>
+      <div class="boss-location">Downtown Gotham · Thanksgiving Parade Route</div>
+      <table class="info-table">
+        <tr><td>Flow</td><td>Balloon sabotage puzzles (3 parade floats) → Mixed enemy waves → Aerial QTE missile reflection → Final close-quarters QTE</td></tr>
+        <tr><td>Strategy</td><td>Each float requires Catwoman + Batman cooperation (valves, totem puzzles, cranks). After the 3rd balloon, fight through melee, pistol, rocket launcher, shield, and <strong>electric baton</strong> enemies. Build the inflatable Bat-Balloon, then enter the mid-air QTE phase — <strong>deflect missiles back at Joker</strong>. Final QTE chain: rip fake gun → pull glasses → hook his ankle. This is a spectacle fight more than a mechanical challenge — enjoy it.</td></tr>
+      </table>
+    </div>
+
+    <div class="boss-card">
+      <h4>Mr. Freeze — Gotham Observatory (Chapter 4)</h4>
+      <div class="boss-location">Gotham Observatory · Cryogenic Laboratory</div>
+      <table class="info-table">
+        <tr><td>Strategy</td><td>Freeze's ice blasts leave <strong>persistent slowing zones</strong> on the ground. Use the Glide Suit to maintain aerial advantage and avoid ground AoE. Destroy the four cooling pipes around the arena to weaken his ice armor. His only vulnerability window is when he <strong>recharges coolant</strong> — Batarang stun, then unload everything. His cryo-beam <strong>freezes your character for 2 seconds</strong> — the character-swap i-frames can dodge it. Fire-based weapons (Flame Batarangs, Explosive Gel) deal bonus damage.</td></tr>
+      </table>
+    </div>
+
+    <div class="boss-card">
+      <h4>Two-Face — Haly's Circus (Chapter 3)</h4>
+      <div class="boss-location">Abandoned Haly's Circus · Big Top Arena</div>
+      <table class="info-table">
+        <tr><td>Strategy</td><td>Two-Face flips his coin to decide attack patterns — <strong>heads = SMG spray</strong> (take cover behind circus props), <strong>tails = baseball bat rush</strong> (counterable with Perfect Counter timing). The arena's <strong>rotating stage mechanism</strong> shifts the terrain — destroy the four control consoles in the corners to lock it. When he shouts "Let's leave it to chance!", throw a Smoke Pellet — his coin toss will miss, giving you a free damage window. His scarred-side attacks are more aggressive; rotate to his unscarred side for safer openings.</td></tr>
+      </table>
+    </div>
+
+    <div class="boss-card">
+      <h4>Poison Ivy — Botanical Gardens (Chapter 3)</h4>
+      <div class="boss-location">Gotham Botanical Gardens · Greenhouse</div>
+      <table class="info-table">
+        <tr><td>Strategy</td><td><strong>Fire weapons deal bonus damage</strong> to all plant-type enemies — equip Flame Batarangs and Explosive Gel. Ivy summons Snapdragons (grab attack, QTE to escape) and toxic spore clouds (persistent damage zones). When she roots into the ground to regenerate health, use Power Suit's Explosive Gel on the roots. The four flamethrower stations in the arena corners can be activated to clear spore clouds. Defeat her giant Snapdragon plant monster in the second phase.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Collectibles ========== -->
+<section class="section" id="collectibles">
+  <div class="container">
+    <h2 class="section-title">Collectibles Guide</h2>
+    <p class="section-subtitle">Four collectible types + all Cosmetic Red Brick locations</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🧱</div>
+        <h3>Red Bricks (13 Total)</h3>
+        <p><strong>Cosmetic Red Bricks</strong> (8): Unlock alternate suit color palettes — Ninja, Nautical, Filthy Rich, Toxic Waste, Feline, Gothic, Construction, Beauty. <strong>Stud Multiplier Red Bricks</strong> (5): x2, x4, x6, x8, x10 — stack <strong>multiplicatively</strong>. All five active = a single Blue Stud (1,000 base) becomes <strong>3,840,000 studs</strong>.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <h3>Batcave Trophies (70)</h3>
+        <p>Distributed across 14 collectible-bearing missions, 5 themed trophies each: Bonsai Trees, Surfboards, Disco Balls, Ace Cards, Cat Heads, Rubber Ducks, Boomboxes, Cakes, Coins, Kites, Venus Fly Traps, Spaceships, Snow Globes, League Banners. Completing trophies spawns <strong>Stud Fountains</strong> in hub areas.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <h3>WayneTech Caches (14 Sets)</h3>
+        <p>~7 missions contain 5 caches each. Used for <strong>gadget upgrades</strong> at the Workbench — Batarang range, Grapnel speed, Explosive Gel radius, Smoke Pellet duration. Often hidden behind ability-gated areas (Catwoman's wall-climb, Gordon's gum gun, Batman's grapple). Replay missions via the Batcomputer to grab missed caches.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚗</div>
+        <h3>Minikit Vehicle Models</h3>
+        <p>Replacing traditional Minikits, completing a 10-piece vehicle model spawns a <strong>permanent Stud Fountain</strong> in the Batcave or Watchtower hub. Fast-travel between hubs to refresh fountains infinitely. 20+ vehicle models to complete across all missions.</p>
+      </div>
+    </div>
+
+    <h3 style="color:#fff; margin:32px 0 16px; text-align:center;">Cosmetic Red Brick Locations</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Red Brick</th><th>Mission</th><th>How to Obtain</th></tr></thead>
+        <tbody>
+          <tr><td style="color:var(--accent);">Ninja</td><td>Infiltration (Prologue)</td><td>Solve the puzzle beneath the temple</td></tr>
+          <tr><td style="color:var(--accent);">Nautical</td><td>New Beginnings (Ch. 1)</td><td>Climb the Docks building, drop into the rooftop vent</td></tr>
+          <tr><td style="color:var(--accent);">Filthy Rich</td><td>Carmine Falcone (Ch. 1)</td><td>Open Iceberg Lounge vault with code <strong>596</strong></td></tr>
+          <tr><td style="color:var(--accent);">Toxic Waste</td><td>The Red Hood Gang (Ch. 1)</td><td>Use Jim Gordon's gum gun on the vent room pipe 3 times</td></tr>
+          <tr><td style="color:var(--accent);">Feline</td><td>Mimes (Ch. 2)</td><td>Complete the cat mini-game (guide green cat to red marker on the TV screen)</td></tr>
+          <tr><td style="color:var(--accent);">Gothic</td><td>The Penguin (Ch. 2)</td><td>Solve the Arctic World puzzle</td></tr>
+          <tr><td style="color:var(--accent);">Construction</td><td>Bat-Mite's Shop</td><td>Random spawn — purchase for <strong>15,000 studs</strong></td></tr>
+          <tr><td style="color:var(--accent);">Beauty</td><td>Bat-Mite's Shop</td><td>Random spawn — purchase for <strong>50,000 studs</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip-box">
+      <strong>Tip:</strong> Bat-Mite's inventory refreshes every time you re-enter the Batcave. If the shop brick you want isn't there, leave and come back.
+    </div>
+  </div>
+</section>
+
+<!-- ========== Stud Farming ========== -->
+<section class="section section-alt" id="studs">
+  <div class="container">
+    <h2 class="section-title">Stud Farming Guide</h2>
+    <p class="section-subtitle">From zero to billionaire — the most efficient stud acquisition strategy</p>
+
+    <h3 style="color:var(--accent); margin-bottom:16px;">Stud Multiplier Red Brick Locations</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Multiplier</th><th>Location</th><th>Cost</th><th>Required Character (Ability)</th></tr></thead>
+        <tbody>
+          <tr><td><span class="stud-highlight">x2</span></td><td>Arkham Asylum Courtyard</td><td>1,000,000</td><td>Riddler (Mind Control)</td></tr>
+          <tr><td><span class="stud-highlight">x4</span></td><td>Wayne Tower Vault</td><td>2,000,000</td><td>Lex Luthor (Deconstructor)</td></tr>
+          <tr><td><span class="stud-highlight">x6</span></td><td>Batcave Lower Levels</td><td>3,000,000</td><td>Aquaman (Water Pools)</td></tr>
+          <tr><td><span class="stud-highlight">x8</span></td><td>The Iceberg Lounge</td><td>4,000,000</td><td>Plastic Man (Grate Maze)</td></tr>
+          <tr><td><span class="stud-highlight">x10</span></td><td>Watchtower Hangar</td><td>5,000,000</td><td>Superman (Laser/Flight)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-grid" style="margin-top:24px;">
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3>Infinite Stud Cache (Free)</h3>
+        <p>Pause Menu → Extras → LEGO Group Online Survey. Complete the 2-3 minute survey on your phone, enter the 8-digit code. Restart your game — a <strong>Stud Cache</strong> appears in your garage near the Batmobile. Opens for <strong>~20,000–30,000 studs</strong> (scales with Exploration upgrades). <strong>Refills every time you revisit the Batcave.</strong> Fast-travel out and back to farm infinitely — this is your zero-cost early-game engine.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Free Play Replay Method</h3>
+        <p>Post-game, replay Joker's levels in Free Play with <strong>Superman</strong> (flight bypasses platforming, heat vision melts gold objects) and <strong>Cyborg</strong> (Giant Suit for rapid AoE silver-object destruction). Use Big Fig characters like <strong>Bane or Killer Croc</strong> — their jump-slam destroys up to 15 objects in one hit, bypassing stud spawn animation delays. Skip all cutscenes. Studs are instantly banked on collection.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🦇</div>
+        <h3>Batwing Street Sweep</h3>
+        <p>Summon the <strong>Batwing (Classic 1989)</strong> — its dual-lock-on missiles auto-target destructible objects. Fly from the Narrows to Diamond District while holding fire. U-turn and fly back — the previous district unloads, respawning all streetlights, benches, and fire hydrants. Ideal for passive farming. Gordon's Rebound Launcher with the Splitter mod is the best on-foot alternative for dense environments.</p>
+      </div>
+    </div>
+
+    <div class="warn-box" style="margin-top:20px;">
+      <strong>Golden Rule:</strong> Do NOT spend a single stud on cosmetic characters or decorations before acquiring the x2 multiplier Red Brick. Every stud diverted to cosmetics delays your real earning power by hours. Rush the multipliers — the game's economy transforms at x2, and breaks wide open at x6+.
+    </div>
+  </div>
+</section>
+
+<!-- ========== Beginner Tips ========== -->
+<section class="section" id="beginners">
+  <div class="container">
+    <h2 class="section-title">Beginner Tips</h2>
+    <p class="section-subtitle">The 10 most important rules for your first 3 hours in Gotham</p>
+
+    <div class="card-grid">
+      <div class="card"><div class="card-icon">1</div><h3>Prioritize Exploration Skills First</h3><p>Hyper Combo, Stud Magnet (1 &amp; 2), Stealthy Studs, Stud Combo Duration, Speedy Stud Combo — these six skills maximize your stud income from Chapter 1 onward. You're earning money before you even reach the shop.</p></div>
+      <div class="card"><div class="card-icon">2</div><h3>Focus Is Everything</h3><p>The "Stun-to-Flurry" loop: fire 3 Batarangs to stun → mash attack to fill the Focus meter rapidly. Focus Takedowns instantly eliminate shielded, electrified, and heavy enemies, or deal massive damage to bosses.</p></div>
+      <div class="card"><div class="card-icon">3</div><h3>Suit-Swapping Is Not Optional</h3><p>Power Suit = hyper-armor + gel puzzles. Hazard Suit = toxic/chemical immunity (Bane Phase 2). Sensor Suit = invisibility + extended dodge i-frames. Glide Suit = aerial dominance over ground AoE. Using one suit for an entire fight is the fastest way to lose.</p></div>
+      <div class="card"><div class="card-icon">4</div><h3>Expand the Batcave Immediately</h3><p>Batcave expansion terminals (wrench icon on scan) are NOT cosmetic. Each of the 5 expansions reveals <strong>hidden areas</strong> containing Minikit vehicle models and 10 WayneTech Chips unavailable anywhere else. Full expansion earns the "I own the place" achievement.</p></div>
+      <div class="card"><div class="card-icon">5</div><h3>Claim Your Free Stud Cache</h3><p>3 minutes: Pause → Extras → LEGO Group Online Survey. Complete it, redeem the code. A Stud Cache spawns in your garage that refills <strong>every Batcave visit</strong>. This alone can fund your first multiplier.</p></div>
+      <div class="card"><div class="card-icon">6</div><h3>Dark Knight Difficulty: New Rules</h3><p>Enemies abandon turn-taking — they <strong>all attack simultaneously</strong>. Wind-ups are ~30% faster. Priority: ranged enemies first, then melee. Overwhelmed? Grapple to an elevated point to reset aggro. The Sensor Suit becomes dramatically more valuable here.</p></div>
+      <div class="card"><div class="card-icon">7</div><h3>x2 Multiplier Before Any Cosmetics</h3><p>Stud multipliers stack <strong>multiplicatively</strong> (x2 + x4 = x8, not x6). Buying Nightwing or a gold Batsuit before you have x2 delays your real money engine by hours. Every stud goes to multipliers first.</p></div>
+      <div class="card"><div class="card-icon">8</div><h3>Gordon's Rebound Launcher Is a Gold Mine</h3><p>Upgrade with the Splitter mod at any Workbench. His homing rubber bullets auto-track destructible objects in dense environments — one of the best early-game stud farming tools before you have multipliers.</p></div>
+      <div class="card"><div class="card-icon">9</div><h3>Minikit Models = Passive Stud Fountains</h3><p>Completing any 10-piece vehicle model spawns a permanent Stud Fountain in your hub. Fast-travel between the Batcave and Watchtower to trigger infinite respawns.</p></div>
+      <div class="card"><div class="card-icon">10</div><h3>Empty Your Materials Before Every Boss</h3><p>Before every boss fight, spend all upgrade materials at the Workbench. Prioritize your primary weapon and Batarangs — concentrated investment beats spreading thin every time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Batcave ========== -->
+<section class="section section-alt" id="batcave">
+  <div class="container">
+    <h2 class="section-title">Batcave Expansion &amp; Challenges</h2>
+    <p class="section-subtitle">Hub upgrade guide + challenge board rewards</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🏗️</div>
+        <h3>5 Expansions = Full Batcave</h3>
+        <p>The Batcave has <strong>5 expansion tiers</strong>, each unlocking new hidden areas and collectibles. Full expansion earns the <strong>"I own the place"</strong> achievement/trophy. Look for terminals marked with a wrench icon when scanning (R3/Right Stick). Expansions gate 10 WayneTech Chips and multiple Minikit models unavailable elsewhere.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Challenge Board</h3>
+        <p>The large black screen high up in the Batcave is the challenge board. Completing challenges rewards <strong>5,000–20,000 studs</strong> each. Highlights: "Demolisher" (smash 60 objects in 1 min), "Combo Crusader" (reach an 80-hit combo), "The Floor Is Lava" (glide 60 seconds without touching ground). Challenges are the most efficient stud source between multiplier acquisitions.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h3>Bat-Mite's Shop</h3>
+        <p>A randomly-spawning vendor selling Cosmetic Red Bricks, rare characters, and unique vehicles. Inventory refreshes each Batcave visit. If you don't see what you want, leave and re-enter. Red Bricks cost 15,000–50,000 studs. Bat-Mite's inventory is the only source for the Construction and Beauty Red Bricks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="section-title">FAQ</h2>
+    <p class="section-subtitle">The most common questions from new players</p>
+
+    <div style="max-width:700px; margin:0 auto;">
+      <div class="faq-item">
+        <div class="faq-q">What kind of game is LEGO Batman: Legacy of the Dark Knight?</div>
+        <div class="faq-a">An <strong>action-adventure LEGO game</strong> developed by TT Games, published by Warner Bros. This entry introduces <strong>Arkham-style free-flow combat</strong> (attack chains, counters, Focus Takedowns), predator stealth mechanics, and a fully open-world Gotham City — firsts for the LEGO Batman series. Main story: 12–15 hours. 100% completion: ~35 hours.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What platforms is it on? When does it release?</div>
+        <div class="faq-a"><strong>PS5, Xbox Series X|S, PC</strong> (Steam &amp; Epic Games Store) — <strong>Standard Edition: May 29, 2026.</strong> Deluxe Edition includes <strong>72-hour early access</strong> (play from May 26, 2026). Nintendo Switch 2 version coming later in 2026.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the difference between Standard and Deluxe Edition?</div>
+        <div class="faq-a"><strong>Standard</strong> ($69.99): full campaign + pre-order bonus (<em>The Dark Knight Returns</em> Batsuit). <strong>Deluxe</strong> ($89.99): all Standard content + <strong>Legacy Collection</strong> at launch (Arkham Trilogy Pack, Batman Beyond Pack, Party Music Pack) + <strong>Mayhem Collection</strong> in Sept 2026 (playable Joker &amp; Harley Quinn with a new story mission) + Golden Age Batsuit pre-order bonus. Deluxe also gets 72-hour early access.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I go back for missed collectibles?</div>
+        <div class="faq-a">Yes. <strong>Free Play mode</strong> unlocks after clearing the story — replay any mission via the Batcomputer with any unlocked characters. You can also replay completed missions mid-story to grab missed items. All collectible progress is retained on replay.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there multiplayer?</div>
+        <div class="faq-a"><strong>2-player local drop-in/drop-out co-op</strong> — Player 2 can join or leave at any time. No online multiplayer. No split-screen competitive modes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do Stud Multiplier Red Bricks work?</div>
+        <div class="faq-a">They stack <strong>multiplicatively</strong>, not additively. x2 + x4 = x8 (not x6). All five multipliers (x2, x4, x6, x8, x10) active simultaneously = <strong>x3,840 total multiplier</strong>. A single Blue Stud (base 1,000) becomes <strong>3,840,000 studs</strong>. This is the single most important economic system in the game.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What content unlocks after beating the game?</div>
+        <div class="faq-a">Post-game unlocks: <strong>Free Play mode</strong> (replay any mission with any character), <strong>full character roster</strong> (all villains become playable), <strong>Batcave Challenge Board</strong>, <strong>Bat-Mite's full shop inventory</strong>, <strong>Dark Knight difficulty</strong>, and all Batcave expansion terminals. 100% completion requires all Red Bricks, WayneTech Caches, Batcave Trophies, and Minikit vehicle models.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>LEGO Batman: Legacy of the Dark Knight Guide · Unofficial Player Community · Content compiled from IGN / Eurogamer / GameRant / VGC / ScreenRant / Destructoid and other outlets</p>
+  <p style="margin-top:4px;">LEGO BATMAN © DC &amp; Warner Bros. Entertainment Inc. LEGO © The LEGO Group · This site is for player reference only</p>
+</footer>
+
+<script>
+  function toggleAccordion(header) {
+    header.parentElement.classList.toggle('open');
+  }
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>
