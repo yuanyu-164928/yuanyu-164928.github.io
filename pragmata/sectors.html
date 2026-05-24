@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PRAGMATA Sector 关卡完整攻略 — 全6个Sector+尾声详细流程指南，包含每个区域的收集品位置、关键任务步骤、新能力解锁、Boss触发条件与回溯提示。">
+<title>PRAGMATA Sector 关卡完整攻略 | 全区域详解</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8394945879571540"
+     crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #12121a;
+    --bg-elevated: #181825;
+    --border: #1e1e30;
+    --text: #c8c8d4;
+    --text-dim: #6b6b80;
+    --accent: #00d4ff;
+    --accent2: #b347ea;
+    --gold: #f0c040;
+    --red: #ff4d6a;
+    --green: #4dff91;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(0, 212, 255, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(179, 71, 234, 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    background: rgba(10, 10, 15, 0.88);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px; padding: 0 24px;
+  }
+  .nav-logo {
+    font-size: 20px; font-weight: 800; letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer; text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 14px; transition: color 0.2s; white-space: nowrap;
+    padding: 4px 0; border-bottom: 2px solid transparent;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 64px 0; }
+  .section-alt { background: rgba(255,255,255,0.012); }
+  .section-title {
+    font-size: 28px; font-weight: 700; text-align: center;
+    margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .section-subtitle { text-align: center; color: var(--text-dim); font-size: 14px; margin-bottom: 40px; }
+  .tag {
+    display: inline-block; padding: 2px 10px; border-radius: 12px;
+    font-size: 12px; font-weight: 500; margin: 2px;
+  }
+  .tag-hack { background: rgba(0, 212, 255, 0.12); color: var(--accent); }
+  .tag-shoot { background: rgba(255, 77, 106, 0.12); color: var(--red); }
+  .tag-item { background: rgba(240, 192, 64, 0.12); color: var(--gold); }
+  .tag-boss { background: rgba(255, 77, 106, 0.15); color: var(--red); font-weight: 600; }
+  .accordion { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .accordion-header {
+    padding: 18px 24px; background: var(--bg-card);
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none; transition: background 0.2s;
+  }
+  .accordion-header:hover { background: var(--bg-elevated); }
+  .accordion-header h3 { font-size: 17px; color: #fff; display: flex; align-items: center; gap: 10px; }
+  .accordion-header .arrow { color: var(--accent); transition: transform 0.3s; font-size: 14px; }
+  .accordion.open .accordion-header .arrow { transform: rotate(90deg); }
+  .accordion-body {
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    background: rgba(0,0,0,0.2);
+  }
+  .accordion.open .accordion-body { max-height: 6000px; }
+  .accordion-content { padding: 20px 24px; }
+  .info-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+  .info-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .info-table td:first-child { color: var(--accent); font-weight: 600; width: 140px; white-space: nowrap; }
+  .tip-box {
+    background: rgba(240, 192, 64, 0.06); border: 1px solid rgba(240, 192, 64, 0.2);
+    border-radius: var(--radius); padding: 16px 20px; margin: 16px 0;
+    font-size: 14px;
+  }
+  .tip-box strong { color: var(--gold); }
+  .warn-box {
+    background: rgba(255, 77, 106, 0.06); border: 1px solid rgba(255, 77, 106, 0.2);
+    border-radius: var(--radius); padding: 16px 20px; margin: 16px 0;
+    font-size: 14px;
+  }
+  .warn-box strong { color: var(--red); }
+  .step-list { counter-reset: step; list-style: none; padding: 0; }
+  .step-list li {
+    counter-increment: step; padding: 8px 0 8px 36px; position: relative;
+    color: var(--text-dim); font-size: 14px; line-height: 1.8;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 8px;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(0, 212, 255, 0.15); color: var(--accent);
+    font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 13px; }
+  .page-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--border); gap: 12px; flex-wrap: wrap;
+  }
+  .page-nav a {
+    color: var(--accent); text-decoration: none; font-size: 13px;
+    padding: 8px 16px; border-radius: 20px;
+    border: 1px solid var(--border); background: var(--bg-card);
+    transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+  }
+  .page-nav a:hover { border-color: var(--accent); color: #fff; background: var(--bg-elevated); }
+  .page-nav .nav-center-group { display: flex; gap: 8px; }
+  .page-nav .nav-all { color: var(--gold); border-color: rgba(240, 192, 64, 0.25); }
+  .page-nav .nav-all:hover { border-color: var(--gold); color: var(--gold); }
+  .sector-page-nav { margin: 0; padding-top: 16px; }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .section { padding: 40px 0; }
+    .accordion-header h3 { font-size: 15px; }
+    .info-table td:first-child { width: 80px; }
+    .page-nav { flex-direction: column; align-items: stretch; text-align: center; }
+    .page-nav .nav-center-group { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">PRAGMATA · GUIDE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="sectors.html" class="active">Sector Guide</a></li>
+      <li><a href="bosses.html">Boss Strategies</a></li>
+      <li><a href="tips.html">Tips &amp; Endgame</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section" id="sectors">
+  <div class="container">
+    <h2 class="section-title">Sector 关卡攻略</h2>
+    <p class="section-subtitle">全 6 个 Sector + 尾声完整流程 · 点击展开详情</p>
+
+    <!-- Sector 1 -->
+    <div class="accordion" id="sector-1" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3><span style="color:var(--accent);">Sector 01</span> 太阳能发电厂 <span class="tag tag-boss">Boss: SectorGuard</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>主要目标</td><td>恢复基地电力 → 重启主电源终端 → 到达顶层 → 击败 SectorGuard</td></tr>
+            <tr><td>关键区域</td><td>发电机入口 (Block 01) → 配电中心 (Block 02) → The Concourse (Block 03)</td></tr>
+            <tr><td>收集品</td><td>Safe Box ×3, Pure Lunum ×1, Mod ×1, REM ×2, Cartridge Holder ×1, Storage Expander ×1, Mini Cabin Figure ×3</td></tr>
+            <tr><td>预计时间</td><td>~1.5–2.5 小时（100% 收集品）</td></tr>
+          </table>
+          <h4 style="color:#fff; margin:20px 0 10px;">攻略要点</h4>
+          <ol class="step-list">
+            <li>进入发电机入口，沿路学习基础操作：移动、骇入教程、基础射击</li>
+            <li>到达<b>配电中心</b>，面对 5 锁大门。跳到大门的左侧，乘电梯下去拿 Safe Box #1</li>
+            <li>在 5 锁大门走廊入口抬头，骇入高处的终端以禁用所有激光障碍。跳下原路障区，清怪后拿 Safe Box #2</li>
+            <li>解锁全部 5 个电子锁，进入 <b>The Concourse</b></li>
+            <li>在 Concourse 触发 <b>SectorGuard</b> Boss 战（详细打法见 <a href="bosses.html#boss-sectorguard" style="color:var(--accent);">Boss 攻略页</a>）</li>
+          </ol>
+          <div class="tip-box">
+            <strong>回溯提示：</strong>Safe Box #3 和 Pure Lunum 需要从 Sector 2 获得的 <strong>Lim Eraser</strong> 才能返回收集。在配电中心乘电梯上去 → 跳过左侧栏杆 → 用 Lim Eraser 清除蓝色 Lunafilament 封印门 → 击败多波敌人后收集。
+          </div>
+          <div class="page-nav sector-page-nav">
+            <span></span>
+            <span class="nav-center-group">
+              <a href="javascript:void(0)" onclick="document.getElementById('sector-2').scrollIntoView({behavior:'smooth'});document.getElementById('sector-2').classList.add('open')">下一区: Sector 02 ▸</a>
+              <a href="#sectors" class="nav-all">▲ 回顶部</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sector 2 -->
+    <div class="accordion" id="sector-2" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3><span style="color:var(--accent);">Sector 02</span> 量产阵列 <span class="tag tag-boss">Boss: Creator</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>主要目标</td><td>乘坐电车 → 骇入 5 个信标 → 解锁巨型大门 → 击败 Creator</td></tr>
+            <tr><td>关键区域</td><td>测试场入口 → 购物区 → 连接通道 → 商业区 → 回收控制中心 → 通讯塔广场</td></tr>
+            <tr><td>收集品</td><td>Safe Box ×3, Pure Lunum ×2, Mod ×2, REM ×3, Cartridge Holder ×1, Mini Cabin Figure ×3</td></tr>
+            <tr><td>新能力</td><td style="color:var(--gold);"><strong>Lim Eraser</strong>（Block 05 解锁）— 清除蓝色 Lunafilament 障碍</td></tr>
+          </table>
+          <h4 style="color:#fff; margin:20px 0 10px;">攻略要点</h4>
+          <ol class="step-list">
+            <li>乘坐电车到"假纽约"区，在<b>时代广场</b>区域骇入第一个信标</li>
+            <li>穿过购物区和商业区，骇入全部 5 个信标。利用屋顶和小巷躲避巡逻敌人</li>
+            <li>在 Block 05 回收控制中心获得 <strong>Lim Eraser</strong>——核心回溯工具</li>
+            <li>所有信标骇入后巨型大门解锁——进入通讯塔广场触发 <b>Creator</b> Boss 战</li>
+          </ol>
+          <div class="tip-box">
+            <strong>建议：</strong>获得 Lim Eraser 后立即返回 Sector 1 收集之前无法获取的 Safe Box #3。确保 Boss 战前备足 Repair Canister。
+          </div>
+          <div class="page-nav sector-page-nav">
+            <span></span>
+            <span class="nav-center-group">
+              <a href="javascript:void(0)" onclick="document.getElementById('sector-3').scrollIntoView({behavior:'smooth'});document.getElementById('sector-3').classList.add('open')">下一区: Sector 03 ▸</a>
+              <a href="#sectors" class="nav-all">▲ 回顶部</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sector 3 -->
+    <div class="accordion" id="sector-3" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3><span style="color:var(--accent);">Sector 03</span> Terra Dome <span class="tag tag-boss">Boss: Garden Keeper</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>主要目标</td><td>乘坐电车 → 寻找 Eight → 重启 2 个 Lim Regulator → 前往地下重启 Lim Regulator → 击败 Garden Keeper</td></tr>
+            <tr><td>关键区域</td><td>Terra Dome 入口 → 生态建模实验室 → 中央大厅 → 土壤研究翼 → Terrarium</td></tr>
+            <tr><td>收集品</td><td>Safe Box ×3, Pure Lunum ×2, Mod ×3, REM ×4, Training Data ×2, Mini Cabin Figure ×3</td></tr>
+          </table>
+          <h4 style="color:#fff; margin:20px 0 10px;">攻略要点</h4>
+          <ol class="step-list">
+            <li>到达<b>生态建模实验室</b>，重启第一个 Lim Regulator。注意：植物型敌人弱火属性武器</li>
+            <li>前往<b>植物工厂</b>重启第二个 Lim Regulator</li>
+            <li>剧情遭遇 <b>Eight</b> 后，前往地下 Terrarium 区域</li>
+            <li>重启地下 Lim Regulator，触发 <b>Garden Keeper</b>（巨型机器人）Boss 战</li>
+          </ol>
+          <div class="page-nav sector-page-nav">
+            <span></span>
+            <span class="nav-center-group">
+              <a href="javascript:void(0)" onclick="document.getElementById('sector-4').scrollIntoView({behavior:'smooth'});document.getElementById('sector-4').classList.add('open')">下一区: Sector 04 ▸</a>
+              <a href="#sectors" class="nav-all">▲ 回顶部</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sector 4 -->
+    <div class="accordion" id="sector-4" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3><span style="color:var(--accent);">Sector 04</span> Lunum 矿区 <span class="tag tag-boss">Boss: Air Raider → LunaDigger</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>主要目标</td><td>乘坐电车 → 重启 IDUS → 前往 Nexus Tower → 潜入仓库 → 击败 Air Raider → 穿越废墟 → 攻入 Nexus Tower → 击败 LunaDigger</td></tr>
+            <tr><td>关键区域</td><td>矿区入口 → 吊车操作场 → 仓库 → 主挖掘场 → Nexus Tower</td></tr>
+            <tr><td>收集品</td><td>Safe Box ×3, Mod ×3, REM ×3, Pure Lunum ×2, Training Data ×2, Storage Expander ×2, Mini Cabin Figure ×3</td></tr>
+          </table>
+          <h4 style="color:#fff; margin:20px 0 10px;">攻略要点</h4>
+          <ol class="step-list">
+            <li>矿区地形开阔——充分利用<b>吊车</b>和<b>采矿设备</b>作为移动平台穿越广阔空间</li>
+            <li>潜入仓库触发 <b>Air Raider</b> 战——利用采矿钻机移动，标准骇入-伤害循环</li>
+            <li>穿越废墟区域，准备迎战本区最终 Boss <b>LunaDigger</b></li>
+          </ol>
+          <div class="warn-box">
+            <strong>⚠ 警告：</strong>LunaDigger 是中期难度门槛。第一阶段骇入窗口极短（Auto Hack 几乎是必需的）。第二阶段可骇入小型无人机反制 Boss。详见 <a href="bosses.html#boss-lunadigger" style="color:var(--accent);">Boss 攻略页</a>。
+          </div>
+          <div class="page-nav sector-page-nav">
+            <span></span>
+            <span class="nav-center-group">
+              <a href="javascript:void(0)" onclick="document.getElementById('sector-5').scrollIntoView({behavior:'smooth'});document.getElementById('sector-5').classList.add('open')">下一区: Sector 05 ▸</a>
+              <a href="#sectors" class="nav-all">▲ 回顶部</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sector 5 -->
+    <div class="accordion" id="sector-5" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3><span style="color:var(--accent);">Sector 05</span> 实验性 Pragmatics <span class="tag tag-hack">线性 · 无收集品</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>主要目标</td><td>前往实验区 → 营救 Diana → 获取能量反应堆 → 护送 Diana 返回 Shelter</td></tr>
+            <tr><td>新能力</td><td style="color:var(--gold);"><strong>Cleanse</strong> — 按住 LB/E 充能释放，驱散红色 Lunafilament 障碍</td></tr>
+            <tr><td>重要</td><td style="color:var(--red);">本区 <b>不可</b> 通过快速旅行返回。</td></tr>
+          </table>
+          <h4 style="color:#fff; margin:20px 0 10px;">攻略要点</h4>
+          <ol class="step-list">
+            <li>这是纯线性叙事区域，无收集品——聚焦于剧情推进和情感冲击</li>
+            <li>Diana 暂时离队，Hugh 需要独自战斗。敌人密度高——谨慎管理弹药</li>
+            <li>获得 <strong>Cleanse</strong> 能力后可清除红色 Lunafilament，这是解锁多个前序区域隐藏房间的关键</li>
+            <li>护送 Diana 阶段优先消灭远程敌人</li>
+          </ol>
+          <div class="warn-box">
+            <strong>⚠ 离开前注意：</strong>本区无遗漏内容，但获得 Cleanse 后立刻回溯前序区域清除红色 Lunafilament，收集遗漏物品。
+          </div>
+          <div class="page-nav sector-page-nav">
+            <span></span>
+            <span class="nav-center-group">
+              <a href="javascript:void(0)" onclick="document.getElementById('sector-6').scrollIntoView({behavior:'smooth'});document.getElementById('sector-6').classList.add('open')">下一区: Sector 06 ▸</a>
+              <a href="#sectors" class="nav-all">▲ 回顶部</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sector 6 -->
+    <div class="accordion" id="sector-6" style="margin-bottom:14px;">
+      <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3><span style="color:var(--accent);">Sector 06</span> 中央港 <span class="tag tag-boss">Boss: Sentinel → Eight/Idea → Abiosis</span></h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <table class="info-table">
+            <tr><td>主要目标</td><td>乘坐电车 → 与 Eight 汇合 → 抵达核心区 → 前往轨道电梯 → 净化 Lunafilament 源头 → 骇入 2 个终端 → 三连 Boss 战</td></tr>
+            <tr><td>关键区域</td><td>港口入口 → 研究翼 → Regolith 实验室 → Lunafilament 实验室 → 轨道电梯</td></tr>
+            <tr><td>收集品</td><td>Safe Box ×3, Mod ×3, REM ×3, Training Data ×2, Pure Lunum ×2, Storage Expander ×1, Mini Cabin Figure ×3</td></tr>
+          </table>
+          <h4 style="color:#fff; margin:20px 0 10px;">攻略要点</h4>
+          <ol class="step-list">
+            <li>这是最后一关——确保所有武器升到满级，Repair Canister 备足</li>
+            <li>在 Lunafilament 实验室使用 Cleanse 净化源头，然后骇入两侧的终端</li>
+            <li>最终连战包括：<b>Sentinel → Eight/Idea → Abiosis</b>——中间没有存档点</li>
+            <li>击败 Abiosis 观赏默认结局</li>
+          </ol>
+          <div class="tip-box">
+            <strong>真结局提示：</strong>要解锁隐藏真结局，需先在"Unknown Signal"模式中获得 <b>Black Box Mod</b>，装备后再次击败最终 Boss。详见 <a href="tips.html#endgame" style="color:var(--accent);">Tips &amp; Endgame 页面</a>。
+          </div>
+          <div class="page-nav sector-page-nav">
+            <span></span>
+            <span class="nav-center-group">
+              <a href="javascript:void(0)" onclick="document.getElementById('sector-epilogue').scrollIntoView({behavior:'smooth'});document.getElementById('sector-epilogue').classList.add('open')">下一区: Epilogue ▸</a>
+              <a href="#sectors" class="nav-all">▲ 回顶部</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Epilogue -->
+    <div class="accordion" id="sector-epilogue">
+      <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3><span style="color:var(--accent2);">Epilogue</span> 最终决战</h3>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p style="color:var(--text-dim);">使用 Eraser 击败 Abiosis 的最终形态，跟随 Diana 完成游戏。尾声为纯过场动画，无收集品。</p>
+          <p style="color:var(--accent); margin-top:8px;">通关后解锁：Unknown Signal 模式、New Game+、章节选择（回溯收集品）。</p>
+          <div class="page-nav sector-page-nav">
+            <span></span>
+            <span class="nav-center-group">
+              <a href="#sectors" class="nav-all">▲ 回顶部</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="page-nav">
+    <a href="index.html">◂ 上一章：Overview</a>
+    <span class="nav-center-group">
+      <a href="bosses.html">下一章：Boss Strategies ▸</a>
+    </span>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>PRAGMATA 攻略指南 · 玩家社区整理 · 内容综合自各大游戏媒体报道</p>
+  <p style="margin-top:4px;">PRAGMATA © CAPCOM CO., LTD. All Rights Reserved · 本站仅供玩家参考</p>
+</footer>
+
+</body>
+</html>

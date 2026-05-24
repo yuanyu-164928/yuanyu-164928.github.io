@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PRAGMATA 新手必看技巧与隐藏结局解锁指南 — 8条核心生存法则、Unknown Signal模式、New Game+、真结局获取步骤。">
+<title>PRAGMATA 新手技巧与隐藏结局 | 核心玩法指南</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8394945879571540"
+     crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #12121a;
+    --bg-elevated: #181825;
+    --border: #1e1e30;
+    --text: #c8c8d4;
+    --text-dim: #6b6b80;
+    --accent: #00d4ff;
+    --accent2: #b347ea;
+    --gold: #f0c040;
+    --red: #ff4d6a;
+    --green: #4dff91;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(0, 212, 255, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(179, 71, 234, 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    background: rgba(10, 10, 15, 0.88);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px; padding: 0 24px;
+  }
+  .nav-logo {
+    font-size: 20px; font-weight: 800; letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer; text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 14px; transition: color 0.2s; white-space: nowrap;
+    padding: 4px 0; border-bottom: 2px solid transparent;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 64px 0; }
+  .section-alt { background: rgba(255,255,255,0.012); }
+  .section-title {
+    font-size: 28px; font-weight: 700; text-align: center;
+    margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .section-subtitle { text-align: center; color: var(--text-dim); font-size: 14px; margin-bottom: 40px; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .card:hover { border-color: rgba(0, 212, 255, 0.3); transform: translateY(-2px); }
+  .card-icon { font-size: 32px; margin-bottom: 12px; }
+  .card h3 { font-size: 18px; margin-bottom: 8px; color: #fff; }
+  .card p, .card li { font-size: 14px; color: var(--text-dim); }
+  .warn-box {
+    background: rgba(255, 77, 106, 0.06); border: 1px solid rgba(255, 77, 106, 0.2);
+    border-radius: var(--radius); padding: 16px 20px; margin: 24px 0;
+    font-size: 14px;
+  }
+  .warn-box strong { color: var(--red); }
+  .footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 13px; }
+  .page-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--border); gap: 12px; flex-wrap: wrap;
+  }
+  .page-nav a {
+    color: var(--accent); text-decoration: none; font-size: 13px;
+    padding: 8px 16px; border-radius: 20px;
+    border: 1px solid var(--border); background: var(--bg-card);
+    transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+  }
+  .page-nav a:hover { border-color: var(--accent); color: #fff; background: var(--bg-elevated); }
+  .page-nav .nav-center-group { display: flex; gap: 8px; }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .section { padding: 40px 0; }
+    .card-grid { grid-template-columns: 1fr; }
+    .page-nav { flex-direction: column; align-items: stretch; text-align: center; }
+    .page-nav .nav-center-group { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">PRAGMATA · GUIDE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="sectors.html">Sector Guide</a></li>
+      <li><a href="bosses.html">Boss Strategies</a></li>
+      <li><a href="tips.html" class="active">Tips &amp; Endgame</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section" id="beginners">
+  <div class="container">
+    <h2 class="section-title">新手必看技巧</h2>
+    <p class="section-subtitle">前 3 小时最重要的 8 条生存法则</p>
+    <div class="card-grid">
+      <div class="card"><div class="card-icon">1</div><h3>先骇入再射击 — 铁律</h3><p>未破解的敌人几乎免疫子弹。养成肌肉记忆——遇到任何敌人，先让 Diana 骇入，再开枪。</p></div>
+      <div class="card"><div class="card-icon">2</div><h3>经常返回 Shelter</h3><p>Shelter 是唯一可以<b>完全恢复 HP、补充 Repair Canister、升级固件、打印新武器和消费 Cabin Coin</b>的地方。每完成一个 Sector 都回去一趟。</p></div>
+      <div class="card"><div class="card-icon">3</div><h3>优先解锁 Object Scan</h3><p>在 Shelter 的 Unit Printer 优先打印 <b>Object Scan</b> 模组——它会高亮收集品、升级组件和隐藏路径，大幅减少遗漏。</p></div>
+      <div class="card"><div class="card-icon">4</div><h3>均衡升级固件</h3><p>Hugh 的外骨骼、主武器单元和 Diana 的骇入能力<b>平均升到约 10 级</b>后再专项突破。过度偏科可能导致某些关卡卡关。</p></div>
+      <div class="card"><div class="card-icon">5</div><h3>获得新能力后立刻回溯</h3><p>Lim Eraser（Sector 2）和 Cleanse（Sector 5）可以清除之前区域的路障，解锁隐藏房间。获得后立即回去探索。</p></div>
+      <div class="card"><div class="card-icon">6</div><h3>把 Overdrive 留给关键时刻</h3><p>满 Overdrive Protocol 条同时开启附近所有敌人弱点并定身。留给 Boss 击晕窗口或阶段转换——不要浪费在小兵身上。</p></div>
+      <div class="card"><div class="card-icon">7</div><h3>Boss 战前花光所有材料</h3><p>每次 Boss 战前在固件终端用掉所有升级素材。优先升级主力武器——不要分散投资。</p></div>
+      <div class="card"><div class="card-icon">8</div><h3>最佳前期连招</h3><p>Stasis Net 定身 → Thrusters 近身 → Shockwave Gun 贴脸输出。对大多数精英敌人和前期 Boss 极其有效。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="endgame">
+  <div class="container">
+    <h2 class="section-title">隐藏结局与通关后内容</h2>
+    <p class="section-subtitle">真结局解锁路线 + Unknown Signal 模式详解</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🔓</div>
+        <h3>真结局解锁步骤</h3>
+        <ol style="padding-left:18px; color:var(--text-dim); font-size:14px; line-height:2;">
+          <li>通关主线并观赏默认结局</li>
+          <li>进入 <b>"Unknown Signal"</b> 模式</li>
+          <li>5 个主要 Sector 达成 100% 收集率</li>
+          <li>击败全部 5 个强化 <b>MK-II Boss</b></li>
+          <li>完成 Hidden Chamber 中的全部 <b>10 个模拟挑战</b></li>
+          <li>获取 <b>Black Box Mod</b></li>
+          <li>装备 Black Box Mod，再次击败最终 Boss Abiosis</li>
+          <li>观赏 <b>真结局</b></li>
+        </ol>
+      </div>
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <h3>Unknown Signal 模式</h3>
+        <p style="margin-bottom:8px;">通关后解锁，是通往真结局的大门：</p>
+        <ul style="padding-left:18px; color:var(--text-dim); font-size:14px; line-height:2;">
+          <li>自由选择任意 Sector 回溯和收集狩猎</li>
+          <li>每个 Sector 的 Boss 升级为 <strong>MK-II 版本</strong>，攻击模式更多、伤害更高</li>
+          <li>Hidden Chamber 包含 10 个模拟挑战关卡——相当于战斗竞技场</li>
+          <li>建议先玩 Unknown Signal 模式再开 New Game+</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h3>New Game+</h3>
+        <p>继承所有武器、固件等级和收集品进度。敌人强度提升，但你可以用终局装备碾压前期关卡。适合查漏补缺和尝试不同流派。</p>
+        <p style="margin-top:8px; color:var(--accent); font-size:13px;">Cabin Coins 按 Bingo 模式使用收益最优：模组 → 外观 → 机器人数据 → 训练模拟器。</p>
+      </div>
+    </div>
+    <div class="warn-box">
+      <strong>⚠ 注意：</strong>Sector 3 中某个特定谜题无伤通关可解锁隐藏可选 Boss <strong>Rogue Sentinel</strong>。建议在固件全满后再挑战。
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="page-nav">
+    <a href="bosses.html">◂ 上一章：Boss Strategies</a>
+    <span class="nav-center-group">
+      <a href="faq.html">下一章：FAQ ▸</a>
+    </span>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>PRAGMATA 攻略指南 · 玩家社区整理 · 内容综合自各大游戏媒体报道</p>
+  <p style="margin-top:4px;">PRAGMATA © CAPCOM CO., LTD. All Rights Reserved · 本站仅供玩家参考</p>
+</footer>
+
+</body>
+</html>

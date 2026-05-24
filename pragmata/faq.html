@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PRAGMATA 常见问题解答 — 游戏类型、平台、发售日期、购买建议、收集品回溯、多结局、多人模式等核心问题汇总。">
+<title>PRAGMATA 常见问答 FAQ | 新手必读</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8394945879571540"
+     crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #12121a;
+    --bg-elevated: #181825;
+    --border: #1e1e30;
+    --text: #c8c8d4;
+    --text-dim: #6b6b80;
+    --accent: #00d4ff;
+    --accent2: #b347ea;
+    --gold: #f0c040;
+    --red: #ff4d6a;
+    --green: #4dff91;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(0, 212, 255, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(179, 71, 234, 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    background: rgba(10, 10, 15, 0.88);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px; padding: 0 24px;
+  }
+  .nav-logo {
+    font-size: 20px; font-weight: 800; letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer; text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 14px; transition: color 0.2s; white-space: nowrap;
+    padding: 4px 0; border-bottom: 2px solid transparent;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 64px 0; }
+  .section-alt { background: rgba(255,255,255,0.012); }
+  .section-title {
+    font-size: 28px; font-weight: 700; text-align: center;
+    margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .section-subtitle { text-align: center; color: var(--text-dim); font-size: 14px; margin-bottom: 40px; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; cursor: pointer; }
+  .faq-q {
+    font-size: 16px; font-weight: 600; color: #fff;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-q::after { content: '▸'; color: var(--accent); transition: transform 0.3s; font-size: 14px; }
+  .faq-item.open .faq-q::after { transform: rotate(90deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; color: var(--text-dim); font-size: 14px; }
+  .faq-item.open .faq-a { max-height: 400px; padding-top: 12px; }
+  .footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 13px; }
+  .page-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--border); gap: 12px; flex-wrap: wrap;
+  }
+  .page-nav a {
+    color: var(--accent); text-decoration: none; font-size: 13px;
+    padding: 8px 16px; border-radius: 20px;
+    border: 1px solid var(--border); background: var(--bg-card);
+    transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+  }
+  .page-nav a:hover { border-color: var(--accent); color: #fff; background: var(--bg-elevated); }
+  .page-nav .nav-center-group { display: flex; gap: 8px; }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .section { padding: 40px 0; }
+    .page-nav { flex-direction: column; align-items: stretch; text-align: center; }
+    .page-nav .nav-center-group { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">PRAGMATA · GUIDE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="sectors.html">Sector Guide</a></li>
+      <li><a href="bosses.html">Boss Strategies</a></li>
+      <li><a href="tips.html">Tips &amp; Endgame</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="section-title">常见问题</h2>
+    <p class="section-subtitle">新手最常问的问题汇总</p>
+    <div style="max-width:700px; margin:0 auto;">
+      <div class="faq-item">
+        <div class="faq-q">PRAGMATA 是什么类型的游戏？</div>
+        <div class="faq-a">一款由 Capcom 开发、基于 RE 引擎的科幻题材第三人称动作冒险游戏。核心是<b>双人协作系统</b>——Diana 负责骇入暴露弱点，Hugh 负责武器输出伤害。主线通关 10~15 小时；100% 完成约 20 小时。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">在哪些平台玩？支持中文吗？</div>
+        <div class="faq-a">PC（Steam）、PS5、Xbox Series X|S、Switch 2。首发即支持完整的中文语音和字幕，同时支持多语言。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">漏掉的收集品还能回去拿吗？</div>
+        <div class="faq-a">可以。通关后解锁章节选择，可以自由回溯任意 Sector。获得 Lim Eraser 和 Cleanse 后也可以在主线途中返回之前的区域。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">纯骇入或纯射击流派能通关吗？</div>
+        <div class="faq-a">纯射击流派会极其困难，因为未破解的敌人有很高的伤害减免。至少走混合流派——游戏设计本身就需要两者并用。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">有多人联机或合作模式吗？</div>
+        <div class="faq-a">PRAGMATA 是纯粹的单人叙事体验，没有任何多人联机或合作模式。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">有几个结局？怎么解锁真结局？</div>
+        <div class="faq-a"><b>2 个结局：</b>默认结局和隐藏真结局。要解锁真结局，需要在"Unknown Signal"模式中获得 Black Box Mod，装备后再次击败最终 Boss。详见 <a href="tips.html#endgame" style="color:var(--accent);">Tips &amp; Endgame 页面</a>。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="page-nav">
+    <a href="tips.html">◂ 上一章：Tips &amp; Endgame</a>
+    <span></span>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>PRAGMATA 攻略指南 · 玩家社区整理 · 内容综合自各大游戏媒体报道</p>
+  <p style="margin-top:4px;">PRAGMATA © CAPCOM CO., LTD. All Rights Reserved · 本站仅供玩家参考</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+  });
+</script>
+
+</body>
+</html>

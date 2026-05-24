@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PRAGMATA 全 Boss 打法攻略 — SectorGuard、Creator、Garden Keeper、Air Raider、LunaDigger、Sentinel、Eight/Idea、Abiosis 弱点分析与推荐配装。">
+<title>PRAGMATA Boss 攻略 | 全 BOSS 弱点与打法详解</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8394945879571540"
+     crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #12121a;
+    --bg-elevated: #181825;
+    --border: #1e1e30;
+    --text: #c8c8d4;
+    --text-dim: #6b6b80;
+    --accent: #00d4ff;
+    --accent2: #b347ea;
+    --gold: #f0c040;
+    --red: #ff4d6a;
+    --green: #4dff91;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(0, 212, 255, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(179, 71, 234, 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    background: rgba(10, 10, 15, 0.88);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px; padding: 0 24px;
+  }
+  .nav-logo {
+    font-size: 20px; font-weight: 800; letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer; text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 14px; transition: color 0.2s; white-space: nowrap;
+    padding: 4px 0; border-bottom: 2px solid transparent;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 64px 0; }
+  .section-alt { background: rgba(255,255,255,0.012); }
+  .section-title {
+    font-size: 28px; font-weight: 700; text-align: center;
+    margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .section-subtitle { text-align: center; color: var(--text-dim); font-size: 14px; margin-bottom: 40px; }
+  .boss-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-left: 3px solid var(--red); border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 24px; margin-bottom: 20px;
+  }
+  .boss-card h4 { font-size: 17px; color: #fff; margin-bottom: 8px; }
+  .boss-card .boss-location { color: var(--accent); font-size: 13px; margin-bottom: 12px; }
+  .info-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+  .info-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .info-table td:first-child { color: var(--accent); font-weight: 600; width: 140px; white-space: nowrap; }
+  .footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 13px; }
+  .page-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--border); gap: 12px; flex-wrap: wrap;
+  }
+  .page-nav a {
+    color: var(--accent); text-decoration: none; font-size: 13px;
+    padding: 8px 16px; border-radius: 20px;
+    border: 1px solid var(--border); background: var(--bg-card);
+    transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+  }
+  .page-nav a:hover { border-color: var(--accent); color: #fff; background: var(--bg-elevated); }
+  .page-nav .nav-center-group { display: flex; gap: 8px; }
+  .page-nav .nav-all { color: var(--gold); border-color: rgba(240, 192, 64, 0.25); }
+  .page-nav .nav-all:hover { border-color: var(--gold); color: var(--gold); }
+  .inner-page-nav { margin: 0; padding-top: 16px; }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .section { padding: 40px 0; }
+    .info-table td:first-child { width: 80px; }
+    .page-nav { flex-direction: column; align-items: stretch; text-align: center; }
+    .page-nav .nav-center-group { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">PRAGMATA · GUIDE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="sectors.html">Sector Guide</a></li>
+      <li><a href="bosses.html" class="active">Boss Strategies</a></li>
+      <li><a href="tips.html">Tips &amp; Endgame</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section section-alt" id="bosses">
+  <div class="container">
+    <h2 class="section-title">全 Boss 打法攻略</h2>
+    <p class="section-subtitle">弱点分析、阶段机制与推荐配装</p>
+
+    <div class="boss-card">
+      <h4 id="boss-sectorguard">🔴 SectorGuard — 太阳能发电厂守卫</h4>
+      <div class="boss-location">Sector 1 · The Concourse（顶层）</div>
+      <table class="info-table">
+        <tr><td>阶段</td><td><strong>2 阶段</strong>（50% HP 切换）</td></tr>
+        <tr><td>弱点</td><td>背部的橙色燃料罐（需先骇入暴露）</td></tr>
+        <tr><td>推荐配装</td><td>Stasis Net、Shockwave Gun、Decode 节点</td></tr>
+        <tr><td>核心打法</td><td>闪避突进 → Diana 骇入 → 绕背射击燃料罐 → 重新走位。第二阶段增加导弹弹幕（地面红色圆圈预警）——持续横向移动，出圈时点按闪避。Boss 冲锋前会蹲下前倾——看到这个信号立刻侧移闪避。</td></tr>
+        <tr><td>爆发窗口</td><td>第二阶段：Stasis Net 定身 → Decode 节点 → Overdrive Protocol → 全力输出燃料罐</td></tr>
+      </table>
+      <div class="page-nav inner-page-nav">
+        <span></span>
+        <span class="nav-center-group">
+          <a href="#boss-creator">下一战: Creator ▸</a>
+          <a href="#bosses" class="nav-all">▲ 回顶部</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="boss-card">
+      <h4 id="boss-creator">🟡 Creator（巨型机器人）— 量产阵列统治者</h4>
+      <div class="boss-location">Sector 2 · 通讯塔广场（需先骇入 5 个信标解锁大门）</div>
+      <table class="info-table">
+        <tr><td>弱点</td><td>面部；骇入成功后暴露的下方弱点</td></tr>
+        <tr><td>推荐配装</td><td>Charge Piercer、Shockwave Gun、Sticky Bombs、Overdrive Protocol</td></tr>
+        <tr><td>核心打法</td><td>保持中距离。先摧毁四肢和头部的骇入干扰器以解除 Diana 的骇入锁定。骇入成功后暴露下方弱点——集中攻击。Boss 手臂横扫范围广——朝攻击方向闪避利用无敌帧。激光攻击期间持续横向移动。</td></tr>
+        <tr><td>终极技能应对</td><td>Boss 蓄力时整个场地变红——<b>爬上场地中生成的 Lunafilament 柱子</b>来躲避，未躲避则 HP 降至 1。击败后需完成限时骇入序列——失败即死。</td></tr>
+      </table>
+      <div class="page-nav inner-page-nav">
+        <span></span>
+        <span class="nav-center-group">
+          <a href="#boss-garden-keeper">下一战: Garden Keeper ▸</a>
+          <a href="#bosses" class="nav-all">▲ 回顶部</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="boss-card">
+      <h4 id="boss-garden-keeper">🟢 Garden Keeper（巨型植物机器人）— Terra Dome 守卫</h4>
+      <div class="boss-location">Sector 3 · 地下 Terrarium</div>
+      <table class="info-table">
+        <tr><td>弱点</td><td>头部、下方、尾部（根据身体和尾巴动作判断当前暴露部位）</td></tr>
+        <tr><td>推荐配装</td><td>火焰系武器（对植物型敌人伤害加成）、Charge Piercer、Homing Missiles</td></tr>
+        <tr><td>核心打法</td><td>先骇入后攻击。Boss 动作幅度大但前摇明显。头部低垂时攻击头部；尾巴扫击后攻击尾部。Boss 被击晕后下方弱点短暂暴露。</td></tr>
+      </table>
+      <div class="page-nav inner-page-nav">
+        <span></span>
+        <span class="nav-center-group">
+          <a href="#boss-air-raider">下一战: Air Raider ▸</a>
+          <a href="#bosses" class="nav-all">▲ 回顶部</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="boss-card">
+      <h4 id="boss-air-raider">⚪ Air Raider — 矿区仓库 Boss</h4>
+      <div class="boss-location">Sector 4 · 仓库</div>
+      <table class="info-table">
+        <tr><td>核心打法</td><td>利用散落在场地的<b>采矿钻机</b>作为移动平台和掩体。Boss 浮空时用 Homing Missiles 锁定。落地后标准骇入→伤害循环。注意场地边缘的跌落危险。</td></tr>
+        <tr><td>推荐配装</td><td>Homing Missiles、Stasis Net、Charge Piercer</td></tr>
+      </table>
+      <div class="page-nav inner-page-nav">
+        <span></span>
+        <span class="nav-center-group">
+          <a href="#boss-lunadigger">下一战: LunaDigger ▸</a>
+          <a href="#bosses" class="nav-all">▲ 回顶部</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="boss-card">
+      <h4 id="boss-lunadigger">🟣 LunaDigger — 中期门槛 Boss</h4>
+      <div class="boss-location">Sector 4 · Nexus Tower 地下巢穴</div>
+      <table class="info-table">
+        <tr><td>阶段</td><td><strong>2 阶段</strong>（50% HP 切换）</td></tr>
+        <tr><td>第一阶段弱点</td><td>仅嘴部（Boss 浮出地面或冲锋时短暂暴露）</td></tr>
+        <tr><td>第二阶段弱点</td><td>嘴部 + 整身</td></tr>
+        <tr><td>必需</td><td style="color:var(--red);"><strong>Auto Hack</strong> — 手动骇入窗口极短，几乎必需</td></tr>
+        <tr><td>推荐配装</td><td>Charge Piercer、Photon Laser、Homing Missiles、Sticky Bombs</td></tr>
+        <tr><td>第一阶段打法</td><td>Boss 大部分时间潜在土中，仅浮出或冲锋时暴露嘴部。看到嘴部立刻——骇入 → OPEN → 高伤害武器输出。多次成功骇入后 Boss 击晕——近身执行 Critical Shot。</td></tr>
+        <tr><td>第二阶段打法</td><td>全身可攻击，但 Boss 追加导弹和<b>小型钻地无人机</b>。<strong>关键战术：骇入无人机让它们攻击 Boss</strong>——每架约 2000 伤害。Boss 静止时用 Homing Missiles 倾泻火力。</td></tr>
+        <tr><td>奖励</td><td>Shelter License Key 4 — 解锁高级 Unit Printer 升级和 Cabin Club Director Board</td></tr>
+      </table>
+      <div class="page-nav inner-page-nav">
+        <span></span>
+        <span class="nav-center-group">
+          <a href="#boss-sentinel">下一战: Sentinel ▸</a>
+          <a href="#bosses" class="nav-all">▲ 回顶部</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="boss-card">
+      <h4 id="boss-sentinel">🔵 Sentinel — 最终阶段，第一战</h4>
+      <div class="boss-location">Sector 6 · 轨道电梯</div>
+      <table class="info-table">
+        <tr><td>核心打法</td><td>保持近距离，使用 <strong>Cleanse</strong> 清除腐化区域。闪避冲锋攻击。Boss 蓄力爆发攻击时用推进器冲刺远离。骇入成功后集中火力。</td></tr>
+      </table>
+      <div class="page-nav inner-page-nav">
+        <span></span>
+        <span class="nav-center-group">
+          <a href="#boss-eight-idea">下一战: Eight / Idea ▸</a>
+          <a href="#bosses" class="nav-all">▲ 回顶部</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="boss-card">
+      <h4 id="boss-eight-idea">🟠 Eight / Idea — 最终阶段，第二战</h4>
+      <div class="boss-location">Sector 6 · 轨道电梯上层</div>
+      <table class="info-table">
+        <tr><td>弱点</td><td>紫色头部（骇入后发黄橙色光时暴露）</td></tr>
+        <tr><td>核心打法</td><td>Cleanse 净化 → 瞄准头部 → 倾泻火力。Idea 会试图束缚 Hugh——红色提示线变红时进行反骇入。最后阶段注意地面的红色目标圈，保持移动。</td></tr>
+      </table>
+      <div class="page-nav inner-page-nav">
+        <span></span>
+        <span class="nav-center-group">
+          <a href="#boss-abiosis">下一战: Abiosis（最终）▸</a>
+          <a href="#bosses" class="nav-all">▲ 回顶部</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="boss-card">
+      <h4 id="boss-abiosis">⚫ Abiosis（最终形态）— 最后一战</h4>
+      <div class="boss-location">Epilogue · 月球表面</div>
+      <table class="info-table">
+        <tr><td>阶段</td><td>单阶段，街机式射击演出</td></tr>
+        <tr><td>核心打法</td><td>Diana 骇入 → Hugh 为巨型武器充能 → 瞄准 Abiosis 身体部位射击。<strong>2 发命中即可击杀</strong>，但你<b>只能承受 1 次攻击</b>。注意观察并闪避 Boss 的攻击波。</td></tr>
+      </table>
+      <div class="page-nav inner-page-nav">
+        <span></span>
+        <span class="nav-center-group">
+          <a href="#bosses" class="nav-all">▲ 回顶部</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="page-nav">
+    <a href="sectors.html">◂ 上一章：Sector Guide</a>
+    <span class="nav-center-group">
+      <a href="tips.html">下一章：Tips &amp; Endgame ▸</a>
+    </span>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>PRAGMATA 攻略指南 · 玩家社区整理 · 内容综合自各大游戏媒体报道</p>
+  <p style="margin-top:4px;">PRAGMATA © CAPCOM CO., LTD. All Rights Reserved · 本站仅供玩家参考</p>
+</footer>
+
+</body>
+</html>
