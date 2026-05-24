@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free online WebP to JPG converter — convert WebP images to JPG instantly in your browser. No upload, no watermark, fast and private.">
+<title>WebP to JPG Converter - Free Online Tool</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8394945879571540" crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #0f0f14;
+    --card: #18181f;
+    --border: #2a2a36;
+    --text: #d4d4dc;
+    --dim: #6e6e7a;
+    --accent: #6366f1;
+    --accent2: #818cf8;
+    --radius: 14px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  header {
+    text-align: center; padding: 32px 24px 0;
+  }
+  header h1 {
+    font-size: 28px; font-weight: 700; color:#fff; margin-bottom:6px;
+  }
+  header p { color: var(--dim); font-size: 15px; }
+  main {
+    flex:1; display:flex; flex-direction:column; align-items:center;
+    padding: 32px 24px; gap: 24px;
+  }
+  .drop-zone {
+    width: 100%; max-width: 600px;
+    border: 2px dashed var(--border); border-radius: var(--radius);
+    padding: 56px 24px; text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer; background: var(--card);
+  }
+  .drop-zone:hover, .drop-zone.drag-over { border-color: var(--accent); background: rgba(99,102,241,0.06); }
+  .drop-zone .icon { font-size: 44px; margin-bottom: 12px; }
+  .drop-zone h3 { font-size: 17px; color:#fff; margin-bottom: 6px; }
+  .drop-zone p { font-size: 13px; color: var(--dim); }
+  .drop-zone input { display: none; }
+  .preview-area {
+    display: none; width: 100%; max-width: 600px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+  }
+  .preview-area.show { display: block; }
+  .preview-area .info { display: flex; justify-content: space-between; align-items: center; margin-bottom:16px; flex-wrap:wrap; gap:12px; }
+  .info .filename { font-weight:600; color:#fff; word-break:break-all; }
+  .info .size { font-size:13px; color: var(--dim); }
+  .images-row { display: flex; gap: 16px; align-items: flex-start; }
+  .images-row > div { flex:1; text-align:center; }
+  .images-row img { max-width:100%; border-radius:8px; border:1px solid var(--border); }
+  .images-row .label { font-size:12px; color: var(--dim); margin-top:6px; }
+  .controls { display: flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:16px; }
+  .controls label { font-size:13px; color: var(--dim); white-space:nowrap; }
+  .controls input[type=range] { width: 130px; accent-color: var(--accent); }
+  .controls .quality-val { font-size:13px; color:var(--accent); font-weight:600; min-width:30px; }
+  .btn-row { display: flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .btn {
+    display: inline-flex; align-items:center; gap:6px;
+    padding: 10px 20px; border-radius: 8px; border: none;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent2); }
+  .btn-secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { background: #22222d; }
+  .how-to { max-width: 600px; margin-top: 16px; }
+  .how-to h3 { font-size: 16px; margin-bottom: 10px; color:#fff; }
+  .how-to ol { color: var(--dim); font-size:14px; padding-left:18px; line-height:2; }
+  footer { text-align:center; padding:24px; color:var(--dim); font-size:12px; border-top:1px solid var(--border); margin-top:48px; }
+  @media (max-width: 600px) {
+    .images-row { flex-direction: column; }
+    header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>WebP to JPG Converter</h1>
+  <p>Convert WebP images to JPG right in your browser — no upload, no ads clutter</p>
+</header>
+
+<main>
+  <div class="drop-zone" id="dropZone">
+    <div class="icon">📸</div>
+    <h3>Drop your WebP image here</h3>
+    <p>or click to browse · Max 20MB</p>
+    <input type="file" id="fileInput" accept="image/webp,.webp">
+  </div>
+
+  <div class="preview-area" id="previewArea">
+    <div class="info">
+      <span class="filename" id="fileName"></span>
+      <span class="size" id="fileSize"></span>
+    </div>
+    <div class="images-row">
+      <div>
+        <img id="previewOriginal" alt="Original">
+        <div class="label">Original WebP</div>
+      </div>
+      <div>
+        <img id="previewConverted" alt="Converted">
+        <div class="label">Converted JPG</div>
+      </div>
+    </div>
+    <div class="controls">
+      <label for="qualitySlider">Quality</label>
+      <input type="range" id="qualitySlider" min="10" max="100" value="92">
+      <span class="quality-val" id="qualityVal">92%</span>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="downloadBtn">&#x2B07; Download JPG</button>
+      <button class="btn btn-secondary" id="convertAnother">Convert Another</button>
+    </div>
+  </div>
+
+  <div class="how-to">
+    <h3>How to convert WebP to JPG</h3>
+    <ol>
+      <li>Drag and drop your WebP image into the box, or click to select</li>
+      <li>Adjust the quality slider if needed (higher = better quality, larger file)</li>
+      <li>Click <strong>Download JPG</strong> — done, no waiting, no server upload</li>
+    </ol>
+  </div>
+</main>
+
+<footer>
+  <p>All conversion happens locally in your browser. Your images are never uploaded to any server.</p>
+</footer>
+
+<script>
+(function(){
+  var dropZone = document.getElementById('dropZone');
+  var fileInput = document.getElementById('fileInput');
+  var previewArea = document.getElementById('previewArea');
+  var qualitySlider = document.getElementById('qualitySlider');
+  var qualityVal = document.getElementById('qualityVal');
+  var downloadBtn = document.getElementById('downloadBtn');
+  var convertAnotherBtn = document.getElementById('convertAnother');
+  var originalImg = document.getElementById('previewOriginal');
+  var convertedImg = document.getElementById('previewConverted');
+  var fileNameEl = document.getElementById('fileName');
+  var fileSizeEl = document.getElementById('fileSize');
+  var convertedBlob = null;
+  var originalName = '';
+
+  function handleFile(file) {
+    if (!file || !/\.webp$/i.test(file.name)) {
+      alert('Please select a .webp image file.');
+      return;
+    }
+    if (file.size > 20 * 1024 * 1024) {
+      alert('File is too large. Max 20MB.');
+      return;
+    }
+    originalName = file.name.replace(/\.webp$/i, '');
+    fileNameEl.textContent = file.name;
+    fileSizeEl.textContent = (file.size / 1024).toFixed(1) + ' KB';
+
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      originalImg.src = e.target.result;
+      doConvert(e.target.result);
+    };
+    reader.readAsDataURL(file);
+
+    previewArea.classList.add('show');
+  }
+
+  function doConvert(dataUrl) {
+    var img = new Image();
+    img.onload = function() {
+      var canvas = document.createElement('canvas');
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+      var quality = parseInt(qualitySlider.value) / 100;
+      canvas.toBlob(function(blob) {
+        convertedBlob = blob;
+        convertedImg.src = URL.createObjectURL(blob);
+        fileSizeEl.textContent = fileSizeEl.textContent + ' → ' + (blob.size / 1024).toFixed(1) + ' KB';
+      }, 'image/jpeg', quality);
+    };
+    img.src = dataUrl;
+  }
+
+  function reConvert() {
+    if (originalImg.src) doConvert(originalImg.src);
+  }
+
+  dropZone.addEventListener('click', function() { fileInput.click(); });
+  fileInput.addEventListener('change', function(e) {
+    if (e.target.files[0]) handleFile(e.target.files[0]);
+  });
+
+  dropZone.addEventListener('dragover', function(e) {
+    e.preventDefault(); dropZone.classList.add('drag-over');
+  });
+  dropZone.addEventListener('dragleave', function() {
+    dropZone.classList.remove('drag-over');
+  });
+  dropZone.addEventListener('drop', function(e) {
+    e.preventDefault(); dropZone.classList.remove('drag-over');
+    var file = e.dataTransfer.files[0];
+    if (file) handleFile(file);
+  });
+
+  qualitySlider.addEventListener('input', function() {
+    qualityVal.textContent = qualitySlider.value + '%';
+    reConvert();
+  });
+
+  downloadBtn.addEventListener('click', function() {
+    if (!convertedBlob) return;
+    var url = URL.createObjectURL(convertedBlob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = originalName + '.jpg';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  convertAnotherBtn.addEventListener('click', function() {
+    previewArea.classList.remove('show');
+    convertedBlob = null;
+    fileInput.value = '';
+  });
+
+  // Paste support
+  document.addEventListener('paste', function(e) {
+    var items = e.clipboardData && e.clipboardData.items;
+    if (!items) return;
+    for (var i=0; i<items.length; i++) {
+      if (items[i].type === 'image/webp') {
+        e.preventDefault();
+        handleFile(items[i].getAsFile());
+        return;
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
